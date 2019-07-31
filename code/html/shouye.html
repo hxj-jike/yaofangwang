@@ -1,13 +1,687 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/shouye.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/shouye.js"></Script>
 </head>
+
 <body>
-    
-    
+    <div id="yaofangwang">
+        <div class="header">
+            <div class="content">
+                <ul class="left">
+                    <li class="n"><i class="icons fav"></i><a title="收藏药房网商城，下次访问更方便！" id="addFav"
+                            href="javascript:void(0);">收藏药房网商城</a><s></s></li>
+                    <li id="weixin"><i class="icons wx"></i><a title="关注药房网商城微信公众账号，随时随地查药价！"
+                            href="//www.yaofangwang.com/help/weixin.html" rel="nofollow">微信查价</a><s></s>
+                        <div class="wxbig">
+                            <div class="pic"></div>
+                            <div class="txt">微信扫描二维码，查药比价更方便！</div>
+                        </div>
+                    </li>
+                    <li id="app"><i class="icons app"></i><a href="//www.yaofangwang.com/app/index.html" target="_blank"
+                            title="下载药房网商城APP" rel="nofollow">手机APP</a>
+                        <div class="appbig">
+                            <div class="pic"></div>
+                            <div class="txt">药房网商城App，注册就送20元</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="right" id="TopNav">
+                    <li class="entry_btn">
+                        <a href="//www.yaofangwang.com/JoinIn.html">商家入驻</a>
+                    </li>
+                    <li class="daohang">
+                        <a href="" class="disa" style="text-decoration:none;">网站导航</a>
+                        <i class="icons dorpdown"></i>
+                        <div class="line"></div>
+                        <div class="other">
+                            <div class="item">
+                                <div class="h1">健康咨询</div>
+                                <a href="//www.yaofangwang.com/news/">医药资讯</a>
+                                <a href="//www.yaofangwang.com/jibing/">疾病知识</a>
+                                <a href="//www.yaofangwang.com/yongyao/">用药指导</a>
+                                <a href="//www.yaofangwang.com/ask/">健康问答</a>
+                                <a href="//www.yaofangwang.com/disease/">疾病症状库</a>
+                            </div>
+                            <div class="item">
+                                <div class="h1">特色服务</div>
+                                <a href="//www.yaofangwang.com/jkzt/">健康专题</a>
+                                <a href="//www.yaofangwang.com/bk/">健康百科</a>
+                                <a href="//www.yaofangwang.com/yiyuan/">医院大全</a>
+                                <a href="//www.yaofangwang.com/yaodian/">药房联盟</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="n"><a href="//www.yaofangwang.com/help/servicecenter.html" class="disa"
+                            rel="nofollow">客服中心</a></li>
+                    <li id="nav_postion"><a href="/manage/medicinefavorite/list/" class="disa">收藏夹</a><s></s>
+                    </li>
+                    <li class="person" id="user">
+                        <a href="//www.yaofangwang.com/manage/order/list" class="fl disa" rel="nofollow">个人中心</a>
+                        <i class="icons dorpdown"></i>
+                        <s></s>
+                        <div class="line"></div>
+                        <div class="menu_list">
+                            <a href="//www.yaofangwang.com/manage/order/list" rel="nofollow">需求管理</a>
+                            <a href="//www.yaofangwang.com/manage/address/list" rel="nofollow">地址管理</a>
+                            <a href="//www.yaofangwang.com/manage/advisoryandreply/list" rel="nofollow">我的咨询</a>
+                            <a href="//www.yaofangwang.com/ask/MyQuestion" rel="nofollow">我的问答</a>
+                            <a href="//www.yaofangwang.com/scan/list" rel="nofollow">最近浏览</a>
+                        </div>
+                    </li>
+                    <li class="cart" id="cart">
+                        <i class="icons cart"></i>
+                        <a href="//www.yaofangwang.com/cart" class="hi nline disa" rel="nofollow">需求单(<label
+                                id="CartNum">0</label>)</a>
+                        <div class="line">
+                        </div>
+                        <div class="cart_box">您的购物车目前没有任何商品，建议您 <a class="green"
+                                href="//reg.yaofangwang.com/login.html">[登录]</a> 查看</div>
+                    </li>
+                    <li class="fix">
+                        <a href="//reg.yaofangwang.com/login.html?referer=https%3A%2F%2Fwww.yaofangwang.com%2F"
+                            id="a_Referer" rel="nofollow">登录</a> /
+                        <a href="//reg.yaofangwang.com/register.html?fs=0&amp;referer=https%3A%2F%2Fwww.yaofangwang.com%2F"
+                            id="a_Referer_register" rel="nofollow">免费注册</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="headera">
+            <div class="content">
+                <div class="logo"><a href="//www.yaofangwang.com/" class="name" title="药房网商城(网上药店) "><img
+                            src="https://c1.yaofangwang.net/common/images/logo.jpg"
+                            alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!"></a></div>
+                <div class="search">
+                    <form method="get" action="//www.yaofangwang.com/search.html" id="search" class="search_input"
+                        onsubmit="return false">
+                        <ul class="opt_list">
+                            <li class="current"><a href="javascript:void(0);" rel="search_Yao"
+                                    action="//www.yaofangwang.com/search.html">商品</a><i></i></li>
+                            <div class="curt">
+                                <li><a href="javascript:void(0);" class="cur" rel="search_Shop"
+                                        action="//www.yaofangwang.com/yaodian/search.html">商家</a><i></i></li>
+                                <li><a href="javascript:void(0);" rel="search_Mill"
+                                        action="//www.yaofangwang.com/yaochang/search.html">厂家</a><i></i></li>
+                                <li><a href="javascript:void(0);" rel="search_Hospital"
+                                        action="//www.yaofangwang.com/yiyuan/search.html">医院</a><i></i></li>
+                            </div>
+                        </ul>
+                        <input type="text" placeholder="请输入批准文号、通用名、商品名、症状" value="" maxlength="60" autocomplete="off"
+                            id="keyword" class="txt">
+                        <button type="button" class="submit" id="btn_submit">搜索</button>
+                        <div class="suggest" id="result" style="display: none;"></div>
+                    </form>
+                    <ul id="hot_search" class="hot_search clearfix">
+                        <li class="noborder highlight"><a
+                                href="https://www.yaofangwang.com/search.html?keyword=%E8%A1%A5%E8%A1%80"
+                                title="补血">补血</a></li>
+                        <li><a href="https://www.yaofangwang.com/search/13791.html" title="999">999</a></li>
+                        <li><a href="https://www.yaofangwang.com/search/39735.html" title="片仔癀">片仔癀</a></li>
+                        <li><a href="https://www.yaofangwang.com/search.html?keyword=%E5%A6%88%E5%AF%8C%E9%9A%86"
+                                title="妈富隆">妈富隆</a></li>
+                        <li class="highlight"><a href="https://www.yaofangwang.com/search/11442.html" title="阿胶">阿胶</a>
+                        </li>
+                        <li><a href="https://www.yaofangwang.com/search/30642.html" title="金戈">金戈</a></li>
+                        <li><a href="https://www.yaofangwang.com/search/50493.html" title="汤臣倍健">汤臣倍健</a></li>
+                        <li class="highlight"><a href="https://www.yaofangwang.com/app/index.html"
+                                title="领20元新人券">领20元新人券</a></li>
+                    </ul>
+                </div>
+                <div class="promise"><a href="//www.yaofangwang.com/promise.html"
+                        title="第三方药品交易服务平台,一站多店式药品订购体验,严格审核正规药房供货"></a></div>
+            </div>
+        </div>
+        <div class="nav1">
+                <div class="content">
+                    <ul class="mainnav clearfix">
+                        <li class="category"><a href="javascript:void(0);">全部商品分类</a></li>
+                        <li class="home"><a id="home" href="//www.yaofangwang.com/">首页</a></li>
+                        <li><a id="yao" href="//www.yaofangwang.com/yao/" title="药品超市">药品超市</a></li>
+                        <!--<li><a id="b2b" href="https://www.yaofangwang.cn" target="_blank" title="批发市场" class="new_item">批发市场<i></i></a></li>-->
+                        <!--<li><a id="b2b" href="https://www.yaofangwang.com/storelist.html" rel="nofollow" target="_blank" title="厂家直供">厂家直供<i></i></a></li>-->
+                        <li><a id="yaodian" href="//www.yaofangwang.com/yaodian/" title="药房联盟">药房联盟</a></li>
+                        <li><a id="yiyuan" href="//www.yaofangwang.com/yiyuan/" title="医院大全">医院大全</a></li>
+                        <!-- <li><a id="zhaoshang" href="//zhaoshang.yaofangwang.com/">医药招商</a></li> -->
+                        <li><a id="news" href="//www.yaofangwang.com/news/" title="医药资讯">医药资讯</a></li>
+                        <li><a id="ask" href="//www.yaofangwang.com/ask/" title="用药问答">用药问答</a></li>
+                        <li><a id="joinin" href="//www.yaofangwang.com/JoinIn.html" title="商家入驻">商家入驻</a></li>
+                    </ul>
+                    <div class="catlist">
+                        <ul class="maincat b" style="opacity: 0.9;">
+                            <li class="zxyp" id="zxyp1">
+                                <h2><a href="//www.yaofangwang.com/catalog-1.html" title="中西药品">中西药品</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="//www.yaofangwang.com/catalog-10.html" title="肠胃用药">肠胃用药</a>
+                                    <a href="//www.yaofangwang.com/catalog-324.html" title="感冒药">感冒药</a>
+                                    <a href="//www.yaofangwang.com/catalog-12.html" title="心脑血管" class="n">心脑血管</a>
+                                </div>
+                                <i></i>
+                            </li>
+                            <li class="ylqx" id="ylqx1">
+                                <h2><a href="//www.yaofangwang.com/catalog-2.html" title="医疗器械">医疗器械</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="//www.yaofangwang.com/catalog-374.html" title="血压计">血压计</a>
+                                    <a href="//www.yaofangwang.com/catalog-375.html" title="血糖仪">血糖仪</a>
+                                    <a href="//www.yaofangwang.com/catalog-383.html" title="创可贴" class="n">创可贴</a>
+                                </div>
+                                <i></i>
+                            </li>
+                            <li class="ysbj" id="ysbj1">
+                                <h2><a href="//www.yaofangwang.com/catalog-3.html" title="养生保健">养生保健</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="//www.yaofangwang.com/catalog-366.html" title="滋补药酒">滋补药酒</a>
+                                    <a href="//www.yaofangwang.com/catalog-368.html" title="补钙">补钙</a>
+                                    <a href="//www.yaofangwang.com/catalog-351.html" title="补气养血" class="n">补气养血</a>
+                                </div>
+                                <i></i>
+                            </li>
+                            <li class="jsyp" id="jsyp1">
+                                <h2><a href="//www.yaofangwang.com/catalog-5.html" title="计生用品">计生用品</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="//www.yaofangwang.com/catalog-63.html" title="避孕套">避孕套</a>
+                                    <a href="//www.yaofangwang.com/catalog-64.html" title="避孕药">避孕药</a>
+                                    <a href="//www.yaofangwang.com/catalog-66.html" title="验孕检查" class="n">验孕检查</a>
+                                </div>
+                                <i></i>
+                            </li>
+                            <li class="zyyp" id="zyyp1">
+                                <h2><a href="//www.yaofangwang.com/catalog-6.html" title="中药饮片">中药饮片</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="//www.yaofangwang.com/catalog-462.html" title="西洋参">西洋参</a>
+                                    <a href="//www.yaofangwang.com/catalog-504.html" title="三七">三七</a>
+                                    <a href="//www.yaofangwang.com/catalog-482.html" title="灵芝孢子粉" class="n">灵芝孢子粉</a>
+                                </div>
+                                <i></i>
+                            </li>
+                            <li class="mrhf nb" id="mrhf1">
+                                <h2><a href="//www.yaofangwang.com/catalog-4.html" title="美容护肤">美容护肤</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="//www.yaofangwang.com/catalog-445.html" title="祛痘">祛痘</a>
+                                    <a href="//www.yaofangwang.com/catalog-446.html" title="祛斑">祛斑</a>
+                                    <a href="//www.yaofangwang.com/catalog-447.html" title="疤痕修复" class="n">疤痕修复</a>
+                                </div>
+                                <i></i>
+                            </li>
+                        </ul>
+                        
+            
+                    <div class="subcat clearfix" style="display: none;">
+                        <ul class="sitems">
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-10.html" target="_blank" title="胃肠用药">胃肠用药<label><i></i></label></a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-70.html" title="胃炎">胃炎</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-71.html" title="胃溃疡">胃溃疡</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-73.html" title="急性肠炎">急性肠炎</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-74.html" title="十二指肠溃疡">十二指肠溃疡</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-75.html" title="胆囊炎">胆囊炎</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-77.html" title="便秘">便秘</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-76.html" title="消化不良">消化不良</a>
+                                        <a sortno="10" href="//www.yaofangwang.com/catalog-78.html" title="痔疮">痔疮</a>
+                                        <a sortno="13" href="//www.yaofangwang.com/catalog-81.html" title="腹痛腹泻">腹痛腹泻</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-11.html" target="_blank" title="呼吸系统">呼吸系统<label><i></i></label></a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-86.html" title="支气管炎">支气管炎</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-87.html" title="肺热咳嗽">肺热咳嗽</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-88.html" title="哮喘">哮喘</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-89.html" title="气管炎">气管炎</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-85.html" title="肺结核">肺结核</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-12.html" target="_blank" title="心脑血管">心脑血管<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-91.html" title="高血压">高血压</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-92.html" title="糖尿病">糖尿病</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-93.html" title="冠心病">冠心病</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-95.html" title="高血脂">高血脂</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-96.html" title="心肌炎">心肌炎</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-529.html" title="脑血栓">脑血栓</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-99.html" title="中风偏瘫">中风偏瘫</a>
+                                        <a sortno="10" href="//www.yaofangwang.com/catalog-100.html" title="低血压">低血压</a>
+                                        <a sortno="11" href="//www.yaofangwang.com/catalog-101.html" title="静脉曲张">静脉曲张</a>
+                                        <a sortno="12" href="//www.yaofangwang.com/catalog-102.html" title="动脉硬化">动脉硬化</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-15.html" target="_blank" title="风湿骨科">风湿骨科<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-128.html" title="风湿病">风湿病</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-440.html" title="跌打损伤">跌打损伤</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-130.html" title="关节炎">关节炎</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-131.html" title="颈椎病">颈椎病</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-132.html" title="骨质疏松">骨质疏松</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-133.html" title="痛风">痛风</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-134.html" title="坐骨神经痛">坐骨神经痛</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-135.html" title="腰肌劳损">腰肌劳损</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-136.html" title="肩周炎">肩周炎</a>
+                                        <a sortno="10" href="//www.yaofangwang.com/catalog-137.html" title="腰椎间盘突出">腰椎间盘突出</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-16.html" target="_blank" title="抗肿瘤药">抗肿瘤药<label><i></i></label></a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-143.html" title="白血病">白血病</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-144.html" title="肺癌">肺癌</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-145.html" title="胃癌">胃癌</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-146.html" title="肝癌">肝癌</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-147.html" title="肾癌">肾癌</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-148.html" title="乳腺癌">乳腺癌</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-149.html" title="卵巢癌">卵巢癌</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-150.html" title="食道癌">食道癌</a>
+                                        <a sortno="10" href="//www.yaofangwang.com/catalog-151.html" title="鼻咽癌">鼻咽癌</a>
+                                        <a sortno="11" href="//www.yaofangwang.com/catalog-152.html" title="胰腺癌">胰腺癌</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-17.html" target="_blank" title="皮肤科药">皮肤科药<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-163.html" title="皮炎">皮炎</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-164.html" title="湿疹">湿疹</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-165.html" title="痤疮">痤疮</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-166.html" title="疥疮">疥疮</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-167.html" title="疱疹">疱疹</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-168.html" title="皮肤过敏">皮肤过敏</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-169.html" title="蚊虫叮咬">蚊虫叮咬</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-530.html" title="乌发生发">乌发生发</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-171.html" title="白癜风">白癜风</a>
+                                        <a sortno="10" href="//www.yaofangwang.com/catalog-172.html" title="尖锐湿疣">尖锐湿疣</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-18.html" target="_blank" title="五官科药">五官科药<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-184.html" title="眼科">眼科</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-185.html" title="鼻科">鼻科</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-186.html" title="耳科">耳科</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-187.html" title="口腔科">口腔科</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-188.html" title="喉科">喉科</a>
+                                </li>
+                            <li class="last">
+                                <a class="bit2" href="//www.yaofangwang.com/catalog-1.html" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#zxyp1" style="">
+                            <div class="pp clearfix">
+                            <a href="//www.yaofangwang.com/catalog-1-0-2637-0-0-0-0-0-p1.html" target="_blank" title="云南白药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png" alt="云南白药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-456-0-0-0-0-0-p1.html" target="_blank" title="仁和"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png" alt="仁和"></a>
+                            <a href="//www.yaofangwang.com/catalog-1-0-1359-0-0-0-0-0-p1.html" target="_blank" title="999 三九制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png" alt="999 三九制药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-1197-0-0-0-0-0-p1.html" target="_blank" title="白云山制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png" alt="白云山制药"></a>
+                            </div>
+                        
+                            <div class="adout">
+                            <a href="https://www.yaofangwang.com/medicine-582143.html" target="_blank" title="汇仁 肾宝片"><img src="//c1.yaofangwang.net/common/upload/imggg/20170523/506def1e-65c9-497a-9e65-f8aaab8fcdaa9794.jpg" alt="汇仁 肾宝片"></a>
+                            </div>
+            
+                            <div class="tj">
+                            <h6>推荐商家</h6>
+                            <ul class="clearfix">
+                                <li><a href="/yaodian/338584/" target="_blank" title="靖宇县复康药店">靖宇县复康药店</a></li>
+                                <li><a href="/yaodian/341225/" target="_blank" title="西安裕庆大药房有限责任公司">西安裕庆大药房有限责任公司</a></li>
+                                <li><a href="/yaodian/379608/" target="_blank" title="阜阳延生大药房零售连锁有限公司太和县吉祥路店">阜阳延生大药房零售连锁有限公司太和县吉祥路店</a></li>
+                                <li><a href="/yaodian/379676/" target="_blank" title="涿州市裕祺药品连锁有限公司十分公司">涿州市裕祺药品连锁有限公司十分公司</a></li>
+                                <li><a href="/yaodian/341206/" target="_blank" title="北京惠民泰康医药有限公司">北京惠民泰康医药有限公司</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix" style="display: none;">
+                        <ul class="sitems">
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-36.html" target="_blank" title="家庭常备">家庭常备<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-379.html" title="棉签">棉签</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-380.html" title="纱布">纱布</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-381.html" title="胶布">胶布</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-382.html" title="绷带">绷带</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-383.html" title="创口贴">创口贴</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-531.html" title="消毒">消毒</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-39.html" target="_blank" title="检测设备">检测设备<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-374.html" title="血压检测">血压检测</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-375.html" title="血糖检测">血糖检测</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-376.html" title="体温检测">体温检测</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-377.html" title="听诊器">听诊器</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-540.html" title="体重脂肪测量仪">体重脂肪测量仪</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-557.html" title="CFMS血小板聚集功能检测试剂盒">CFMS血小板聚集功能检测试剂盒</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-564.html" title="免疫缺陷病毒抗体">免疫缺陷病毒抗体</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-588.html" title="标准对数视力表灯">标准对数视力表灯</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-38.html" target="_blank" title="助行器械">助行器械<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-386.html" title="轮椅">轮椅</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-387.html" title="拐杖">拐杖</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-390.html" title="助行器">助行器</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-388.html" title="接尿器">接尿器</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-37.html" target="_blank" title="康复理疗">康复理疗<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-414.html" title="红外理疗">红外理疗</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-415.html" title="按摩系列">按摩系列</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-416.html" title="治疗仪器">治疗仪器</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-417.html" title="足浴理疗">足浴理疗</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-418.html" title="助听器">助听器</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-419.html" title="疝气治疗">疝气治疗</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-420.html" title="矫姿">矫姿</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-422.html" title="频谱理疗">频谱理疗</a>
+                                        <a sortno="10" href="//www.yaofangwang.com/catalog-423.html" title="磁场理疗">磁场理疗</a>
+                                        <a sortno="11" href="//www.yaofangwang.com/catalog-558.html" title="鼻腔护理">鼻腔护理</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-40.html" target="_blank" title="中医器械">中医器械<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-392.html" title="针灸">针灸</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-393.html" title="拔罐">拔罐</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-394.html" title="刮痧">刮痧</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-42.html" target="_blank" title="供氧器械">供氧器械<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-425.html" title="制氧设备">制氧设备</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-427.html" title="供氧辅助器械">供氧辅助器械</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-428.html" title="氧气袋">氧气袋</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-43.html" target="_blank" title="外用贴膏">外用贴膏<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-430.html" title="降温退烧">降温退烧</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-431.html" title="风湿骨痛">风湿骨痛</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-432.html" title="妇科外用">妇科外用</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-433.html" title="五官外用">五官外用</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-434.html" title="跌打损伤">跌打损伤</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-435.html" title="晕车贴">晕车贴</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-537.html" title="医用敷料">医用敷料</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-44.html" target="_blank" title="隐形眼镜">隐形眼镜<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-437.html" title="隐形眼镜">隐形眼镜</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-438.html" title="美瞳彩片">美瞳彩片</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-439.html" title="周边护理">周边护理</a>
+                                </li>
+                            <li class="last">
+                                <a class="bit2" href="//www.yaofangwang.com/catalog-2.html" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#ylqx1" style="">
+                            <div class="pp clearfix">
+                            <a href="//www.yaofangwang.com/catalog-1-0-2637-0-0-0-0-0-p1.html" target="_blank" title="云南白药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png" alt="云南白药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-456-0-0-0-0-0-p1.html" target="_blank" title="仁和"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png" alt="仁和"></a>
+                            <a href="//www.yaofangwang.com/catalog-1-0-1359-0-0-0-0-0-p1.html" target="_blank" title="999 三九制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png" alt="999 三九制药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-1197-0-0-0-0-0-p1.html" target="_blank" title="白云山制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png" alt="白云山制药"></a>
+                            </div>
+                        
+                            <div class="adout">
+                            <a href="https://www.yaofangwang.com/medicine-606790.html" target="_blank" title="欧姆龙 电子血压计"><img src="//c1.yaofangwang.net/common/upload/imggg/20170523/e9a48e9e-bda6-4ac6-a380-e2565c1e05391984.jpg" alt="欧姆龙 电子血压计"></a>
+                            </div>
+            
+                            <div class="tj">
+                            <h6>推荐商家</h6>
+                            <ul class="clearfix">
+                                <li><a href="/yaodian/340949/" target="_blank" title="龙江县德正医药有限公司">龙江县德正医药有限公司</a></li>
+                                <li><a href="/yaodian/379801/" target="_blank" title="四川云锦康药房有限公司">四川云锦康药房有限公司</a></li>
+                                <li><a href="/yaodian/351814/" target="_blank" title="合肥国瑾堂大药房有限公司">合肥国瑾堂大药房有限公司</a></li>
+                                <li><a href="/yaodian/379677/" target="_blank" title="涿州市裕祺药品连锁有限公司十一分公司">涿州市裕祺药品连锁有限公司十一分公司</a></li>
+                                <li><a href="/yaodian/341354/" target="_blank" title="孝感市亿生康大药房">孝感市亿生康大药房</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix" style="display: none;">
+                        <ul class="sitems">
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-46.html" target="_blank" title="大众养生">大众养生<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-366.html" title="滋补药酒">滋补药酒</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-367.html" title="增强免疫">增强免疫</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-368.html" title="补矿物质">补矿物质</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-369.html" title="补维生素">补维生素</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-370.html" title="改善睡眠">改善睡眠</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-371.html" title="调节肠胃">调节肠胃</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-372.html" title="缓解疲劳">缓解疲劳</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-373.html" title="清咽润喉">清咽润喉</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-582.html" title="保护视力">保护视力</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-47.html" target="_blank" title="男性保健">男性保健<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-354.html" title="补肾壮阳">补肾壮阳</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-355.html" title="养肝护肝">养肝护肝</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-357.html" title="补充体力">补充体力</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-48.html" target="_blank" title="女性保健">女性保健<label><i></i></label></a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-348.html" title="美容养颜">美容养颜</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-349.html" title="减肥瘦身">减肥瘦身</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-350.html" title="调内分泌">调内分泌</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-351.html" title="补气养血">补气养血</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-352.html" title="丰胸美体">丰胸美体</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-353.html" title="产前产后">产前产后</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-49.html" target="_blank" title="中老年保健">中老年保健<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-337.html" title="调节血脂">调节血脂</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-338.html" title="调节血压">调节血压</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-339.html" title="调节血糖">调节血糖</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-340.html" title="增强免疫">增强免疫</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-341.html" title="骨质疏松">骨质疏松</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-342.html" title="润肠通便">润肠通便</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-343.html" title="强身健体">强身健体</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-344.html" title="抑制肿瘤">抑制肿瘤</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-345.html" title="改善睡眠">改善睡眠</a>
+                                        <a sortno="10" href="//www.yaofangwang.com/catalog-346.html" title="心脏养护">心脏养护</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-50.html" target="_blank" title="青少年儿童">青少年儿童<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-359.html" title="增强免疫">增强免疫</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-361.html" title="发育增高">发育增高</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-360.html" title="补钙排铅">补钙排铅</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-362.html" title="补维生素">补维生素</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-363.html" title="健脑益智">健脑益智</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-364.html" title="改善睡眠">改善睡眠</a>
+                                </li>
+                            <li class="last">
+                                <a class="bit2" href="//www.yaofangwang.com/catalog-3.html" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#ysbj1" style="">
+                            <div class="pp clearfix">
+                            <a href="//www.yaofangwang.com/catalog-1-0-2637-0-0-0-0-0-p1.html" target="_blank" title="云南白药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png" alt="云南白药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-456-0-0-0-0-0-p1.html" target="_blank" title="仁和"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png" alt="仁和"></a>
+                            <a href="//www.yaofangwang.com/catalog-1-0-1359-0-0-0-0-0-p1.html" target="_blank" title="999 三九制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png" alt="999 三九制药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-1197-0-0-0-0-0-p1.html" target="_blank" title="白云山制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png" alt="白云山制药"></a>
+                            </div>
+                        
+                            <div class="adout">
+                            <a href="https://www.yaofangwang.com/medicine-519152.html" target="_blank" title="鸿茅药酒"><img src="//c1.yaofangwang.net/common/upload/imggg/20170714/7b5f2159-0b03-48a5-8de4-da1ae4f125dd4663.jpg" alt="鸿茅药酒"></a>
+                            </div>
+            
+                            <div class="tj">
+                            <h6>推荐商家</h6>
+                            <ul class="clearfix">
+                                <li><a href="/yaodian/350266/" target="_blank" title="威海祥运生医药连锁有限公司十一店">威海祥运生医药连锁有限公司十一店</a></li>
+                                <li><a href="/yaodian/380060/" target="_blank" title="临汾经济开发区国民健康药店">临汾经济开发区国民健康药店</a></li>
+                                <li><a href="/yaodian/68436/" target="_blank" title="陕西咸阳百姓乐大药房连锁有限公司">陕西咸阳百姓乐大药房连锁有限公司</a></li>
+                                <li><a href="/yaodian/379678/" target="_blank" title="涿州市裕祺药品连锁有限公司十三分公司">涿州市裕祺药品连锁有限公司十三分公司</a></li>
+                                <li><a href="/yaodian/348371/" target="_blank" title="德惠市惠发街众康大药房">德惠市惠发街众康大药房</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix" style="display:none;">
+                        <ul class="sitems">
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-55.html" target="_blank" title="避孕用品">避孕用品<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-63.html" title="避孕套">避孕套</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-64.html" title="避孕药">避孕药</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-56.html" target="_blank" title="检测用品">检测用品<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-65.html" title="排卵检测">排卵检测</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-66.html" title="验孕检查">验孕检查</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-57.html" target="_blank" title="情趣用品">情趣用品<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-68.html" title="润滑剂">润滑剂</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-459.html" title="男用器具">男用器具</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-460.html" title="女用器具">女用器具</a>
+                                </li>
+                            <li class="last">
+                                <a class="bit2" href="//www.yaofangwang.com/catalog-5.html" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#jsyp1" style="">
+                            <div class="pp clearfix">
+                            <a href="//www.yaofangwang.com/catalog-1-0-2637-0-0-0-0-0-p1.html" target="_blank" title="云南白药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png" alt="云南白药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-456-0-0-0-0-0-p1.html" target="_blank" title="仁和"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png" alt="仁和"></a>
+                            <a href="//www.yaofangwang.com/catalog-1-0-1359-0-0-0-0-0-p1.html" target="_blank" title="999 三九制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png" alt="999 三九制药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-1197-0-0-0-0-0-p1.html" target="_blank" title="白云山制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png" alt="白云山制药"></a>
+                            </div>
+                        
+                            <div class="adout">
+                            <a href="https://www.yaofangwang.com/medicine-578399.html" target="_blank" title="凸点螺纹凉感装·天然胶乳橡胶避孕套"><img src="//c1.yaofangwang.net/common/upload/imggg/20170523/0ba58c6f-65bf-4ab7-907a-51979291e1021590.png" alt="凸点螺纹凉感装·天然胶乳橡胶避孕套"></a>
+                            </div>
+            
+                            <div class="tj">
+                            <h6>推荐商家</h6>
+                            <ul class="clearfix">
+                                <li><a href="/yaodian/339270/" target="_blank" title="长春市圣益轩大药房">长春市圣益轩大药房</a></li>
+                                <li><a href="/yaodian/380151/" target="_blank" title="元氏县泉兴大药房">元氏县泉兴大药房</a></li>
+                                <li><a href="/yaodian/348044/" target="_blank" title="菏泽天香医药连锁有限公司九五药房">菏泽天香医药连锁有限公司九五药房</a></li>
+                                <li><a href="/yaodian/379679/" target="_blank" title="涿州市裕祺药品连锁有限公司十四分公司">涿州市裕祺药品连锁有限公司十四分公司</a></li>
+                                <li><a href="/yaodian/350257/" target="_blank" title="瓦房店市明珠药房">瓦房店市明珠药房</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix" style="display: none;">
+                        <ul class="sitems">
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-61.html" target="_blank" title="名贵中药">名贵中药<label><i></i></label></a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-466.html" title="冬虫夏草">冬虫夏草</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-463.html" title="高丽参">高丽参</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-464.html" title="红参">红参</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-465.html" title="鹿茸">鹿茸</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-478.html" title="白参">白参</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-467.html" title="灵芝">灵芝</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-468.html" title="燕窝">燕窝</a>
+                                        <a sortno="15" href="//www.yaofangwang.com/catalog-511.html" title="雪莲">雪莲</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-58.html" target="_blank" title="中药材">中药材<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-496.html" title="枸杞">枸杞</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-494.html" title="胖大海">胖大海</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-497.html" title="当归">当归</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-499.html" title="天麻">天麻</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-504.html" title="三七">三七</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-515.html" title="红枣">红枣</a>
+                                        <a sortno="8" href="//www.yaofangwang.com/catalog-495.html" title="决明子">决明子</a>
+                                        <a sortno="9" href="//www.yaofangwang.com/catalog-502.html" title="百合">百合</a>
+                                        <a sortno="11" href="//www.yaofangwang.com/catalog-500.html" title="红景天">红景天</a>
+                                        <a sortno="12" href="//www.yaofangwang.com/catalog-498.html" title="黄芪">黄芪</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-57.html" target="_blank" title="中药粉末">中药粉末<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-68.html" title="润滑剂">润滑剂</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-459.html" title="男用器具">男用器具</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-460.html" title="女用器具">女用器具</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-59.html" target="_blank" title="茶">茶<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-469.html" title="减肥茶">减肥茶</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-470.html" title="降压茶">降压茶</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-471.html" title="降糖茶">降糖茶</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-493.html" title="苦丁茶">苦丁茶</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-472.html" title="通便茶">通便茶</a>
+                                        <a sortno="7" href="//www.yaofangwang.com/catalog-475.html" title="花茶">花茶</a>
+                                </li>
+                            <li class="last">
+                                <a class="bit2" href="//www.yaofangwang.com/catalog-6.html" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#zyyp1" style="">
+                            <div class="pp clearfix">
+                            <a href="//www.yaofangwang.com/catalog-1-0-2637-0-0-0-0-0-p1.html" target="_blank" title="云南白药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png" alt="云南白药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-456-0-0-0-0-0-p1.html" target="_blank" title="仁和"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png" alt="仁和"></a>
+                            <a href="//www.yaofangwang.com/catalog-1-0-1359-0-0-0-0-0-p1.html" target="_blank" title="999 三九制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png" alt="999 三九制药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-1197-0-0-0-0-0-p1.html" target="_blank" title="白云山制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png" alt="白云山制药"></a>
+                            </div>
+                        
+                            <div class="adout">
+                            <a href="https://www.yaofangwang.com/medicine-611935.html" target="_blank" title="真仁堂 超细三七粉"><img src="//c1.yaofangwang.net/common/upload/imggg/20170523/50804b31-6d21-4328-a411-c4675ff0f2a81330.png" alt="真仁堂 超细三七粉"></a>
+                            </div>
+            
+                            <div class="tj">
+                            <h6>推荐商家</h6>
+                            <ul class="clearfix">
+                                <li><a href="/yaodian/349983/" target="_blank" title="慈溪市友兴大药房">慈溪市友兴大药房</a></li>
+                                <li><a href="/yaodian/379894/" target="_blank" title="红安县国药馆药房">红安县国药馆药房</a></li>
+                                <li><a href="/yaodian/351930/" target="_blank" title="北京京海康佰馨医药有限责任公司长阳分店">北京京海康佰馨医药有限责任公司长阳分店</a></li>
+                                <li><a href="/yaodian/379798/" target="_blank" title="阜阳小松医药有限公司程集大药房">阜阳小松医药有限公司程集大药房</a></li>
+                                <li><a href="/yaodian/350335/" target="_blank" title="西安市碑林区君怡医药超市">西安市碑林区君怡医药超市</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix" style="display:none;">
+                        <ul class="sitems">
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-51.html" target="_blank" title="药妆">药妆<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-445.html" title="祛痘">祛痘</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-446.html" title="祛斑">祛斑</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-447.html" title="疤痕修复">疤痕修复</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-52.html" target="_blank" title="时尚彩妆">时尚彩妆<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-448.html" title="补水">补水</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-449.html" title="BB霜">BB霜</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-450.html" title="隔离霜">隔离霜</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-451.html" title="精华液">精华液</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-560.html" title="美白霜/乳液">美白霜/乳液</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-566.html" title="洁面乳">洁面乳</a>
+                                        <a sortno="6" href="//www.yaofangwang.com/catalog-452.html" title="防晒霜">防晒霜</a>
+                                </li>
+                                <li>
+                                    <a class="bit" href="//www.yaofangwang.com/catalog-53.html" target="_blank" title="身体护理">身体护理<label><i></i></label></a>
+                                        <a sortno="1" href="//www.yaofangwang.com/catalog-533.html" title="润肤">润肤</a>
+                                        <a sortno="2" href="//www.yaofangwang.com/catalog-534.html" title="止痒">止痒</a>
+                                        <a sortno="3" href="//www.yaofangwang.com/catalog-455.html" title="生发防脱">生发防脱</a>
+                                        <a sortno="4" href="//www.yaofangwang.com/catalog-538.html" title="香体除臭">香体除臭</a>
+                                        <a sortno="5" href="//www.yaofangwang.com/catalog-567.html" title="脱毛">脱毛</a>
+                                </li>
+                            <li class="last">
+                                <a class="bit2" href="//www.yaofangwang.com/catalog-4.html" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#mrhf1" style="">
+                            <div class="pp clearfix">
+                            <a href="//www.yaofangwang.com/catalog-1-0-2637-0-0-0-0-0-p1.html" target="_blank" title="云南白药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png" alt="云南白药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-456-0-0-0-0-0-p1.html" target="_blank" title="仁和"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png" alt="仁和"></a>
+                            <a href="//www.yaofangwang.com/catalog-1-0-1359-0-0-0-0-0-p1.html" target="_blank" title="999 三九制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png" alt="999 三九制药"></a>
+                            <a class="last" href="//www.yaofangwang.com/catalog-1-0-1197-0-0-0-0-0-p1.html" target="_blank" title="白云山制药"><img src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png" alt="白云山制药"></a>
+                            </div>
+                        
+                            <div class="adout">
+                            <a href="https://www.yaofangwang.com/medicine-555616.html" target="_blank" title="艾丽 奥利司他胶囊"><img src="//c1.yaofangwang.net/common/upload/imggg/20170523/e5f7d36d-341c-45fc-be68-092d6a2a44d55503.png" alt="艾丽 奥利司他胶囊"></a>
+                            </div>
+            
+                            <div class="tj">
+                            <h6>推荐商家</h6>
+                            <ul class="clearfix">
+                                <li><a href="/yaodian/351199/" target="_blank" title="北京普生集肿瘤药品有限公司">北京普生集肿瘤药品有限公司</a></li>
+                                <li><a href="/yaodian/350786/" target="_blank" title="沂南县福泰祥大药房">沂南县福泰祥大药房</a></li>
+                                <li><a href="/yaodian/379636/" target="_blank" title="中江县凯江镇大中太极大药房北门店">中江县凯江镇大中太极大药房北门店</a></li>
+                                <li><a href="/yaodian/339200/" target="_blank" title="宽城区仙芝堂大药房">宽城区仙芝堂大药房</a></li>
+                                <li><a href="/yaodian/350431/" target="_blank" title="肇州县九康医药有限公司">肇州县九康医药有限公司</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            
+            
+                    </div>
+                        <a href="https://www.yaofangwang.com/JoinIn.html" target="_blank" class="header-img" title="商家入住">
+                            <img src="//c1.yaofangwang.net/common/upload/imggg/20180718/6b1f8f43-8b9a-43ff-94d2-67233a57bdd03344.png" width="180" height="330" alt="商家入住">
+                        </a>
+            
+            
+                </div>
+            </div>
+    </div>
+
+
 </body>
+
 </html>
