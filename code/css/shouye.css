@@ -1,4 +1,4 @@
-* {
+*{
     list-style: none;
     padding: 0;
     margin: 0;
@@ -14,10 +14,9 @@ a {
     width: 100%;
 }
 
-#box .content {
+#yaofangwang .content {
     width: 1190px;
     margin: auto;
-    overflow: hidden;
 }
 
 .header {
@@ -815,11 +814,408 @@ a.green {
 }
 .header-img {
     position: absolute;
-    right: 0;
+    right:0;
     top: 50px;
     width: 180px;
     height: 330px;
     font-size: 0;
 }
+.banner {
+    width: 100%;
+    height: 390px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    z-index:200;
+}
+.banner {
+    width: 100%;
+    height: 390px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    z-index: 200;
+}
 
+.banner ul {
+    height: 100%;
+    margin: 0 auto;
+    min-width: 1190px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
 
+.banner ul li {
+    position: absolute;
+    width: 100%;
+    height:390px;
+}
+
+ .banner ul li img{
+    position: absolute;
+    width: 780px;
+    height: 390px;
+}
+
+#imgId1 {
+    opacity: 1;
+}
+
+#imgId2 {
+    opacity: 0;
+}
+
+#imgId3 {
+    opacity: 0;
+}
+
+#imgId4 {
+    opacity: 0;
+}
+
+#imgId5 {
+    opacity: 0;
+}
+
+.banner ul li>a {
+    display: block;
+    height: 100%;
+    margin-left: 310px;
+    text-align: left;
+    width: 780px;
+    position: relative;
+}
+
+.banner .btn {
+    width: 780px;
+    margin-left:310px;
+    background: #666;
+    opacity: 0.7;
+    height:30px;
+    position: absolute;
+    bottom: 0;
+}
+.btn .dik{
+    display:inline-block;
+    margin-left:50px;
+    height:100%;
+    color:#fff;
+    font-size: 14px;
+    
+}
+
+.dik:hover{
+    background:greenyellow;
+}
+
+.banner .bt {
+    position: absolute;
+    background-image: url(../img/icons.png);
+    width:30px;
+    height: 60px;
+    top:150px;
+    display: block;
+}
+.leftArrow {
+    position: absolute;
+    left:318px;
+    background-position: -348px -138px;
+}
+
+.rightArrow {
+    position: absolute;
+    left:1062px;
+    background-position: -314px -138px;
+}
+.banner .tad {
+    width: 180px;
+    height: 60px;
+    font-size: 0;
+    position: absolute;
+    right:79px;
+    top: 330px;
+    z-index: 1000;
+}
+.banner .tad a {
+    display: inline-block;
+    height: 60px;
+    width: 90px;
+    vertical-align: top;
+}
+.banner .tad a img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+ .main1{
+    margin-bottom: 10px;
+}
+.main1 .ic.ic-xs {
+    background-position: -100px -5px;
+    width: 45px;
+    height: 27px;
+    vertical-align: middle;
+}
+.main1 .ic {
+    background: transparent url(../img/xianshi.png) no-repeat 0 0;
+    display: inline-block;
+}
+.main .tit {
+    font-size: 20px;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+.main2 .content{
+    border: 1px solid #e4e4e4;
+    height: 276px;
+    letter-spacing: -4px;
+    text-align: left;
+}
+ .main2 li{
+    position: relative;
+    vertical-align: top;
+    width: 19.999%;
+    letter-spacing: 0;
+    height: 100%;
+    overflow: hidden;
+    float:left;
+}
+.main2 li a{
+    display:block;
+    height: 190px;
+    width: 190px;
+    margin-top: 18px;
+    position: relative;
+}
+.main2 img:hover {
+    transform: scale(1);
+}
+.main2  img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    transform: scale(0.9);
+    transition: all .4s ease;
+}
+.main2 h2{
+    margin: 0 18px;
+    font-weight:normal;
+    font-size:16px;
+}
+.main p{
+    color: #e50000;
+    font-size: 16px;
+    padding-left:10px;
+}
+.mitem {
+    margin-bottom: 20px;
+}
+.mitem .title {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 5px;
+}
+.mitem .title .layer {
+    float: left;
+    margin: 8px 0;
+}
+.mitem .title .layer.cur i {
+    background: #0cb95f;
+}
+.mitem .title .layer i.l {
+    text-align: right;
+    padding-right: 4px;
+    border-bottom-left-radius: 13px;
+    border-top-left-radius: 13px;
+}
+.mitem .title .layer i {
+    background: #999;
+}
+.mitem .title .layer i {
+    float: left;
+    display: block;
+    width: 22px;
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+}
+.mitem .title .layer i.r {
+    text-align: left;
+    padding-left: 4px;
+    border-bottom-right-radius: 13px;
+    border-top-right-radius: 13px;
+    margin-left: 2px;
+}
+.mitem h2 {
+    float: left;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+    font-size: 20px;
+    padding-left: 10px;
+}
+.mitem .snavs {
+    float: right;
+    height: 14px;
+    margin: 16px 0 9px;
+}
+.mitem .snavs a {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 4px;
+    float: right;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+    text-align: center;
+}
+.mitem .snavs label {
+    float: right;
+    display: block;
+    margin: 0 5px;
+    height: 14px;
+    line-height: 14px;
+    margin: 3px 8px;
+    color: #ccc;
+}
+.mitem .snavs a i {
+    background-image: url(../img/icons.png);
+    width: 9px;
+    height: 6px;
+    background-position: -406px -32px;
+}
+.mitem .content .mleft {
+    width: 300px;
+    float: left;
+    position: relative;
+}
+.slide2 {
+    position: relative;
+}
+.mitem .addiv1 {
+    height: 360px;
+    width: 300px;
+    overflow: hidden;
+}
+.mitem .addiv1 li {
+    float: left;
+    position: absolute;
+    cursor: pointer;
+}
+.mitem .content .addiv1 .a1 {
+    display: block;
+    height: 360px;
+    width: 300px;
+}
+.slide2 .nextprev2 {
+    position: absolute;
+    width: 300px;
+    left: 0;
+    top: 150px;
+    height: 60px;
+}
+.slide2 .nextprev2 a.left1 {
+    background-position: -348px -138px;
+    left: 0;
+}
+.slide2 .nextprev2 a.right1 {
+    background-position: -382px -138px;
+    right: 0;
+}
+.slide2 .nextprev2 a.ar {
+    background-image: url(../img/icons.png);
+    display: block;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    width: 30px;
+}
+.mitem .content .pp {
+    border: 1px solid #e5e5e5;
+    width: 298px;
+}
+.mitem .content .pp a.f1 {
+    border-right: 1px solid #e5e5e5;
+    width: 148px;
+}
+.mitem .content .pp a img {
+    width: 140px;
+    height: 60px;
+    margin: 5px 0 0 3px;
+}
+.mitem .content .pp a {
+    display: block;
+    float: left;
+    width: 149px;
+    height: 71px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.mitem .content .mcenter2 {
+    width: 890px;
+    float: left;
+    border-top: 1px solid #e5e5e5;
+    overflow: hidden;
+}
+.mitem .hlist2 li {
+    float: left;
+    height: 267px;
+    width: 186px;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    padding: 10px 18px 10px 18px;
+    position: relative;
+}
+.mitem .hlist2 li .photo {
+    display: block;
+    text-align: center;
+}
+.mitem .hlist2 li img {
+    height: 174px;
+    width: 174px;
+    transition: transform .2s linear 0s;
+}
+.mitem .hlist2 li .txt {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin: 15px 0 0;
+    overflow: hidden;
+}
+.mitem .hlist2 li .st {
+    color: #999;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+.money {
+    color: #e50000;
+    font-style: normal;
+    font-family: Arial;
+}
+.mitem .hlist2 li .gx {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    text-align: left;
+    background: #000;
+    opacity: .65;
+    color: #fff;
+    line-height: 20px;
+    padding: 10px;
+    width: 202px;
+    
+}
+.mitem .hlist2 li.last {
+    width: 184px;
+}
+.mitem .hlist2 li .money {
+    font-size: 14px;
+    text-align: left;
+}
