@@ -663,6 +663,7 @@ a.green {
     border: 1px solid #e5e5e5;
     min-height: 389px;
     padding: 0 10px;
+    font-size: 12px;
 }
 .catlist .subcat .sitems {
     padding: 0 45px 0 10px;
@@ -808,6 +809,17 @@ a.green {
     width: 131px;
     color: #666;
     float: left;
+}
+.catlist, .header-img {
+    display: block !important;
+}
+.header-img {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 180px;
+    height: 330px;
+    font-size: 0;
 }
 
 
