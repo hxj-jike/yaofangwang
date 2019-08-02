@@ -1,4 +1,4 @@
-*{
+* {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -112,15 +112,16 @@ a {
     left: -80px;
     display: none;
 }
-#weixin:hover .wxbig{
-    display:block;
+
+#weixin:hover .wxbig {
+    display: block;
 }
 
 .wxbig {
     z-index: 99999;
     border: 1px solid #e5e5e5;
     background: #fff;
-    display:none;
+    display: none;
 }
 
 .wxbig .pic {
@@ -129,7 +130,7 @@ a {
     height: 258px;
     background: url(../img/wxsmall.png);
     background-repeat: no-repeat;
-    background-size:100% 100%;
+    background-size: 100% 100%;
 }
 
 .wxbig .txt {
@@ -156,11 +157,12 @@ a {
     position: relative;
     width: 258px;
     height: 258px;
-    background-image:url(../img/app_download.png);
-    background-size:100% 100%;
+    background-image: url(../img/app_download.png);
+    background-size: 100% 100%;
 }
-#app:hover .appbig{
-    display:block;
+
+#app:hover .appbig {
+    display: block;
 }
 
 .header .right {
@@ -224,15 +226,17 @@ a {
     position: absolute;
     right: -1px;
     top: 40px;
-    z-index:20000;
+    z-index: 20000;
     width: 450px;
     padding: 10px 0;
     line-height: 1.5;
     display: none;
 }
-.daohang:hover{
-    background:#fff;
+
+.daohang:hover {
+    background: #fff;
 }
+
 .header .right .daohang .other .item .h1 {
     color: #0cb95f;
     font-size: 14px;
@@ -282,14 +286,16 @@ a {
     min-width: 100%;
     border: 1px solid #ccc;
     background: #fff;
-   display:none;
+    display: none;
 }
-.person:hover{
-    background:#fff;
+
+.person:hover {
+    background: #fff;
 }
-.person:hover .menu_list{
-    display:block;
-    border-top:none;
+
+.person:hover .menu_list {
+    display: block;
+    border-top: none;
 }
 
 
@@ -329,13 +335,15 @@ a {
     text-align: left;
     line-height: 25px;
 }
-.cart:hover .cart_box{
-    display:block;
-    border-top:none;
+
+.cart:hover .cart_box {
+    display: block;
+    border-top: none;
 
 }
-.cart:hover{
-    background:#fff;
+
+.cart:hover {
+    background: #fff;
 }
 
 a.green {
@@ -351,44 +359,52 @@ a.green {
     float: none;
     display: inline-block;
 }
+
 .headera {
     position: relative;
     z-index: 300;
 }
+
 .headera .content {
     position: relative;
     margin: 0 auto 0;
     width: 1190px;
     height: 140px;
 }
-.headera .logo{
+
+.headera .logo {
     position: absolute;
-    top:32px;
-    left:10px;
-    width:330px;
+    top: 32px;
+    left: 10px;
+    width: 330px;
 }
+
 .headera .logo a.name {
     width: 210px;
     height: 70px;
     display: block;
 }
+
 .headera .logo a img {
     width: 210px;
     height: 70px;
 }
-.headera .search{
+
+.headera .search {
     position: absolute;
-    top:39px;
-    left:340px;
-    width:550px;
+    top: 39px;
+    left: 340px;
+    width: 550px;
 }
-.search_input{
+
+.search_input {
     position: relative;
     width: 542px;
     height: 36px;
-    border:2px solid #0cb95f;
-    line-height:36px;
+    border: 2px solid #0cb95f;
+    line-height: 36px;
 }
+
 .search_input .opt {
     position: relative;
     float: left;
@@ -452,9 +468,11 @@ a.green {
 .search_input .opt_list li.current i {
     display: block
 }
+
 .search_input .opt_list li a:hover {
     background: #f4f4f4
 }
+
 .search_input .txt {
     float: left;
     margin-left: 82px;
@@ -464,6 +482,7 @@ a.green {
     border: 0;
     line-height: 26px
 }
+
 .search_input .submit {
     float: left;
     width: 90px;
@@ -474,6 +493,7 @@ a.green {
     font-size: 14px;
     cursor: pointer
 }
+
 .search_input .suggest {
     position: absolute;
     top: 38px;
@@ -484,22 +504,26 @@ a.green {
     background: #fff;
     color: #333
 }
+
 .headera .search .hot_search {
     margin-top: 10px;
     margin-left: -1px;
-    font-size:12px;
+    font-size: 12px;
 }
-.clearfix{
-    clear:both;
-    zoom:1;
+
+.clearfix {
+    clear: both;
+    zoom: 1;
 }
+
 .headera .search .hot_search li {
     float: left;
     display: block;
     padding: 0 12px;
     height: 14px;
-    border-left:1px solid #ccc;
+    border-left: 1px solid #ccc;
 }
+
 .headera .search .hot_search li a {
     color: #999
 }
@@ -511,13 +535,14 @@ a.green {
 .headera .search .hot_search li.highlight a {
     color: #e50000
 }
-.clearfix:after{
-    clear:both;
-    display:block;
+
+.clearfix:after {
+    clear: both;
+    display: block;
     visibility: hidden;
-    height:0;
-    content:" ";
-    font-size:0;
+    height: 0;
+    content: " ";
+    font-size: 0;
 }
 
 .headera .promise {
@@ -537,17 +562,20 @@ a.green {
     display: block;
     margin-right: 10px
 }
-.nav1{
+
+.nav1 {
     background: #fff;
     position: relative;
     z-index: 202;
 }
+
 .nav1 .content {
     position: relative;
     margin: 0 auto 0;
     width: 1190px;
     height: 50px;
 }
+
 .nav1 .mainnav li.category {
     padding: 0;
     padding-left: 20px;
@@ -555,20 +583,24 @@ a.green {
     background: #0cb95f;
     color: #fff;
 }
+
 .nav1 .mainnav li {
     float: left;
     padding: 0 30px;
     height: 50px;
     line-height: 50px;
 }
+
 .nav1 .mainnav li.category a {
     color: #fff;
 }
+
 .nav1 .mainnav li a {
     font-size: 16px;
     font-family: "\5FAE\8F6F\96C5\9ED1";
-    color:#333;
+    color: #333;
 }
+
 .nav1 .mainnav li.home {
     padding: 0 50px 0 50px;
 }
@@ -576,7 +608,8 @@ a.green {
 .catlist .header-img {
     display: block !important;
 }
-.catlist{
+
+.catlist {
     height: 390px;
     width: 228px;
     position: absolute;
@@ -584,6 +617,7 @@ a.green {
     top: 50px;
     z-index: 1000;
 }
+
 .catlist .maincat {
     background: #fff;
     z-index: 1001;
@@ -593,6 +627,7 @@ a.green {
     width: 230px;
     opacity: .9;
 }
+
 .catlist .maincat li {
     height: 45px;
     padding: 9px 0 10px 50px;
@@ -603,14 +638,17 @@ a.green {
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
 }
+
 .catlist .maincat h2 {
     font-family: "\5FAE\8F6F\96C5\9ED1";
     display: block;
     margin-bottom: 4px;
 }
+
 .catlist .maincat h2 a {
     font-size: 14px;
 }
+
 .catlist .maincat .sub a {
     display: block;
     float: left;
@@ -620,38 +658,49 @@ a.green {
     font-size: 12px;
     margin-right: 10px;
 }
+
 .catlist .maincat .sub a.n {
     margin-right: 0;
 }
+
 .catlist .maincat .zxyp i {
     background-position: -132px -154px;
 }
+
 .catlist .maincat i {
     width: 24px;
     height: 24px;
     left: 16px;
     top: 14px;
 }
+
 .catlist .maincat .ylqx i {
     background-position: -156px -154px;
 }
+
 .catlist .maincat .ysbj i {
     background-position: -180px -154px;
 }
+
 .catlist .maincat .jsyp i {
     background-position: -204px -154px;
 }
+
 .catlist .maincat .zyyp i {
     background-position: -252px -154px;
 }
+
 .catlist .maincat .mrhf i {
     background-position: -228px -154px;
 }
-.catlist .maincat i, .catlist s {
+
+.catlist .maincat i,
+.catlist s {
     background-image: url(../img/icons.png);
     display: block;
     position: absolute;
 }
+
 .catlist .subcat {
     width: 758px;
     position: absolute;
@@ -664,17 +713,20 @@ a.green {
     padding: 0 10px;
     font-size: 12px;
 }
+
 .catlist .subcat .sitems {
     padding: 0 45px 0 10px;
     width: 520px;
     float: left;
 }
+
 .catlist .subcat .sitems li {
     border-bottom: 1px dotted #e1e1e1;
     overflow: hidden;
     padding: 10px 0 10px 95px;
     position: relative;
 }
+
 .catlist .subcat .sitems li a {
     float: left;
     margin: 5px 8px;
@@ -683,6 +735,7 @@ a.green {
     white-space: nowrap;
     color: #666;
 }
+
 .catlist .subcat .sitems li .bit {
     background: #0cb95f;
     height: 20px;
@@ -696,6 +749,7 @@ a.green {
     color: #fff;
     text-decoration: none;
 }
+
 .catlist .subcat .sitems li .bit label {
     background-color: #0aa454;
     display: block;
@@ -705,6 +759,7 @@ a.green {
     right: 0;
     top: 0;
 }
+
 .catlist .subcat .sitems li .bit i {
     background-image: url(../img/icons.png);
     background-position: -14px -21px;
@@ -714,14 +769,17 @@ a.green {
     height: 20px;
     width: 14px;
 }
+
 .catlist .subcat .sitems li.last {
     border-bottom: 0;
     height: 25px;
 }
+
 .catlist .subcat .sitems li.last .bit2 {
     left: 432px;
     margin: 0;
 }
+
 .catlist .subcat .sitems li .bit2 label {
     background-color: #bbb;
     display: block;
@@ -731,6 +789,7 @@ a.green {
     right: 0;
     top: 0;
 }
+
 .catlist .subcat .sitems li .bit2 i {
     background-image: url(../img/icons.png);
     background-position: -14px -21px;
@@ -740,11 +799,13 @@ a.green {
     height: 20px;
     width: 14px;
 }
+
 .catlist .subcat .rmpp {
     padding: 15px 0 0 10px;
     width: 169px;
     float: left;
 }
+
 .catlist .subcat .rmpp .pp a {
     display: block;
     float: left;
@@ -753,13 +814,16 @@ a.green {
     margin: 0 4px 4px 0;
     border: 1px solid #eaeaea;
 }
+
 .catlist .subcat .rmpp .pp a img {
     height: 40px;
     width: 80px;
 }
+
 .catlist .subcat .rmpp .pp a.last {
     margin-right: 0;
 }
+
 .catlist .subcat .rmpp .adout a {
     display: block;
     border: 1px solid #e5e5e5;
@@ -767,14 +831,17 @@ a.green {
     height: 120px;
     margin: 5px 0 9px;
 }
+
 .catlist .subcat .rmpp .adout img {
     width: 166px;
     height: 120px;
 }
+
 .catlist .subcat .rmpp .tj {
     border: 1px solid #eaeaea;
     margin-bottom: 15px;
 }
+
 .catlist .subcat .rmpp .tj h6 {
     background: #fff none repeat scroll 0 0;
     border-bottom: 1px dotted #eaeaea;
@@ -785,10 +852,12 @@ a.green {
     text-align: left;
     font-weight: bold;
 }
+
 .catlist .subcat .rmpp .tj ul {
     background: #fff;
     padding: 5px 10px;
 }
+
 .catlist .subcat .rmpp .tj ul li {
     float: left;
     height: 28px;
@@ -799,6 +868,7 @@ a.green {
     color: #999;
     padding-left: 18px;
 }
+
 .catlist .subcat .rmpp .tj ul li a {
     display: block;
     height: 28px;
@@ -809,25 +879,30 @@ a.green {
     color: #666;
     float: left;
 }
-.catlist, .header-img {
+
+.catlist,
+.header-img {
     display: block !important;
 }
+
 .header-img {
     position: absolute;
-    right:0;
+    right: 0;
     top: 50px;
     width: 180px;
     height: 330px;
     font-size: 0;
 }
+
 .banner {
     width: 100%;
     height: 390px;
     position: relative;
     margin-bottom: 20px;
     overflow: hidden;
-    z-index:200;
+    z-index: 200;
 }
+
 .banner {
     width: 100%;
     height: 390px;
@@ -849,10 +924,10 @@ a.green {
 .banner ul li {
     position: absolute;
     width: 100%;
-    height:390px;
+    height: 390px;
 }
 
- .banner ul li img{
+.banner ul li img {
     position: absolute;
     width: 780px;
     height: 390px;
@@ -889,149 +964,172 @@ a.green {
 
 .banner .btn {
     width: 780px;
-    margin-left:310px;
+    margin-left: 310px;
     background: #666;
     opacity: 0.7;
-    height:30px;
+    height: 30px;
     position: absolute;
     bottom: 0;
 }
-.btn .dik{
-    display:inline-block;
-    margin-left:50px;
-    height:100%;
-    color:#fff;
+
+.btn .dik {
+    display: inline-block;
+    margin-left: 50px;
+    height: 100%;
+    color: #fff;
     font-size: 14px;
-    
+
 }
 
-.dik:hover{
-    background:greenyellow;
+.dik:hover {
+    background: greenyellow;
 }
 
 .banner .bt {
     position: absolute;
     background-image: url(../img/icons.png);
-    width:30px;
+    width: 30px;
     height: 60px;
-    top:150px;
+    top: 150px;
     display: block;
 }
+
 .leftArrow {
     position: absolute;
-    left:318px;
+    left: 318px;
     background-position: -348px -138px;
 }
 
 .rightArrow {
     position: absolute;
-    left:1062px;
+    left: 1062px;
     background-position: -314px -138px;
 }
+
 .banner .tad {
     width: 180px;
     height: 60px;
     font-size: 0;
     position: absolute;
-    right:79px;
+    right: 79px;
     top: 330px;
     z-index: 1000;
 }
+
 .banner .tad a {
     display: inline-block;
     height: 60px;
     width: 90px;
     vertical-align: top;
 }
+
 .banner .tad a img {
     width: 100%;
     height: 100%;
     vertical-align: top;
 }
- .main1{
+
+.main1 {
     margin-bottom: 10px;
 }
+
 .main1 .ic.ic-xs {
     background-position: -100px -5px;
     width: 45px;
     height: 27px;
     vertical-align: middle;
 }
+
 .main1 .ic {
     background: transparent url(../img/xianshi.png) no-repeat 0 0;
     display: inline-block;
 }
+
 .main .tit {
     font-size: 20px;
     margin: 0 10px;
     vertical-align: middle;
 }
-.main2 .content{
+
+.main2 .content {
     border: 1px solid #e4e4e4;
     height: 276px;
     letter-spacing: -4px;
     text-align: left;
 }
- .main2 li{
+
+.main2 li {
     position: relative;
     vertical-align: top;
     width: 19.999%;
     letter-spacing: 0;
     height: 100%;
     overflow: hidden;
-    float:left;
+    float: left;
 }
-.main2 li a{
-    display:block;
+
+.main2 li a {
+    display: block;
     height: 190px;
     width: 190px;
     margin-top: 18px;
     position: relative;
 }
+
 .main2 img:hover {
     transform: scale(1);
 }
-.main2  img {
+
+.main2 img {
     width: 100%;
     height: 100%;
     vertical-align: top;
     transform: scale(0.9);
     transition: all .4s ease;
 }
-.main2 h2{
+
+.main2 h2 {
     margin: 0 18px;
-    font-weight:normal;
-    font-size:16px;
+    font-weight: normal;
+    font-size: 16px;
 }
-.main p{
+
+.main2 p {
     color: #e50000;
     font-size: 16px;
-    padding-left:10px;
+    padding-left: 10px;
 }
+
 .mitem {
     margin-bottom: 20px;
 }
+
 .mitem .title {
     height: 40px;
     line-height: 40px;
     margin-bottom: 5px;
 }
+
 .mitem .title .layer {
     float: left;
     margin: 8px 0;
 }
+
 .mitem .title .layer.cur i {
     background: #0cb95f;
 }
+
 .mitem .title .layer i.l {
     text-align: right;
     padding-right: 4px;
     border-bottom-left-radius: 13px;
     border-top-left-radius: 13px;
 }
+
 .mitem .title .layer i {
     background: #999;
 }
+
 .mitem .title .layer i {
     float: left;
     display: block;
@@ -1043,6 +1141,7 @@ a.green {
     font-weight: normal;
     font-style: normal;
 }
+
 .mitem .title .layer i.r {
     text-align: left;
     padding-left: 4px;
@@ -1050,17 +1149,29 @@ a.green {
     border-top-right-radius: 13px;
     margin-left: 2px;
 }
+
 .mitem h2 {
     float: left;
     font-family: "\5FAE\8F6F\96C5\9ED1";
     font-size: 20px;
     padding-left: 10px;
 }
+
 .mitem .snavs {
     float: right;
     height: 14px;
     margin: 16px 0 9px;
 }
+
+.snavs span {
+    display: inline-block;
+}
+
+.snavs span:hover {
+    background: #0cb95f;
+    opacity: 0.7;
+}
+
 .mitem .snavs a {
     display: block;
     height: 20px;
@@ -1073,6 +1184,7 @@ a.green {
     font-family: "\5FAE\8F6F\96C5\9ED1";
     text-align: center;
 }
+
 .mitem .snavs label {
     float: right;
     display: block;
@@ -1082,35 +1194,42 @@ a.green {
     margin: 3px 8px;
     color: #ccc;
 }
+
 .mitem .snavs a i {
     background-image: url(../img/icons.png);
     width: 9px;
     height: 6px;
     background-position: -406px -32px;
 }
-.mitem .content .mleft {
+
+.mitem .contentt .mleft {
     width: 300px;
     float: left;
     position: relative;
 }
+
 .slide2 {
     position: relative;
 }
+
 .mitem .addiv1 {
     height: 360px;
     width: 300px;
     overflow: hidden;
 }
+
 .mitem .addiv1 li {
     float: left;
     position: absolute;
     cursor: pointer;
 }
-.mitem .content .addiv1 .a1 {
+
+.mitem .contentt .addiv1 .a1 {
     display: block;
     height: 360px;
     width: 300px;
 }
+
 .slide2 .nextprev2 {
     position: absolute;
     width: 300px;
@@ -1118,14 +1237,17 @@ a.green {
     top: 150px;
     height: 60px;
 }
+
 .slide2 .nextprev2 a.left1 {
     background-position: -348px -138px;
     left: 0;
 }
+
 .slide2 .nextprev2 a.right1 {
     background-position: -382px -138px;
     right: 0;
 }
+
 .slide2 .nextprev2 a.ar {
     background-image: url(../img/icons.png);
     display: block;
@@ -1134,58 +1256,74 @@ a.green {
     top: 0;
     width: 30px;
 }
-.mitem .content .pp {
+
+.mitem .contentt .pp {
     border: 1px solid #e5e5e5;
     width: 298px;
 }
-.mitem .content .pp a.f1 {
+
+.mitem .contentt .pp a.f1 {
     border-right: 1px solid #e5e5e5;
     width: 148px;
 }
-.mitem .content .pp a img {
+
+.mitem .contentt .pp a img {
     width: 140px;
     height: 60px;
     margin: 5px 0 0 3px;
 }
-.mitem .content .pp a {
+
+.mitem .contentt .pp a {
     display: block;
     float: left;
     width: 149px;
     height: 71px;
     border-bottom: 1px solid #e5e5e5;
 }
+
 .mitem .content .mcenter2 {
     width: 890px;
     float: left;
     border-top: 1px solid #e5e5e5;
     overflow: hidden;
+    height: 578px;
 }
-.mitem .hlist2 li {
+
+.mitem .hlist2 li,
+.mitem .hlist6 li {
     float: left;
     height: 267px;
-    width: 186px;
+    width: 185px;
     border-bottom: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
     padding: 10px 18px 10px 18px;
     position: relative;
 }
-.mitem .hlist2 li .photo {
+
+.mitem .hlist2 li .photo,
+.mitem .hlist6 li .photo {
     display: block;
     text-align: center;
 }
-.mitem .hlist2 li img {
+
+.mitem .hlist2 li img,
+.mitem .hlist6 li img {
     height: 174px;
     width: 174px;
     transition: transform .2s linear 0s;
 }
-.mitem .hlist2 li .txt {
+
+.mitem .hlist2 li .txt,
+.mitem .hlist6 li .txt {
     display: block;
     height: 20px;
     line-height: 20px;
     margin: 15px 0 0;
     overflow: hidden;
 }
-.mitem .hlist2 li .st {
+
+.mitem .hlist2 li .st,
+.mitem .hlist6 li .st {
     color: #999;
     display: block;
     height: 20px;
@@ -1193,12 +1331,21 @@ a.green {
     margin: 5px 0;
     overflow: hidden;
 }
+
+.mitem .hlist2 li .money,
+.mitem .hlist6 li .money {
+    font-size: 14px;
+    text-align: left;
+}
+
 .money {
     color: #e50000;
     font-style: normal;
     font-family: Arial;
 }
-.mitem .hlist2 li .gx {
+
+.mitem .hlist2 li .gx,
+.mitem .hlist6 li .gx {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1210,12 +1357,262 @@ a.green {
     line-height: 20px;
     padding: 10px;
     width: 202px;
-    
+    font-size: 12px;
+    display: none;
 }
-.mitem .hlist2 li.last {
-    width: 184px;
+
+.hlist2 li:hover .gx {
+    display: block;
 }
-.mitem .hlist2 li .money {
+
+.bn {
+    display: inline-block;
+}
+
+.mitem .content .mcenter3 {
+    width: 890px;
+    float: left;
+    border-top: 1px solid #e5e5e5;
+    overflow: hidden;
+    height: 578px;
+}
+
+.mitem .hlist4 li,
+.mitem .hlist7 li {
+    float: left;
+    height: 267px;
+    width: 185px;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    padding: 10px 18px 10px 18px;
+    position: relative;
+}
+
+.mitem .hlist4 li .photo,
+.mitem .hlist7 li .photo {
+    display: block;
+    text-align: center;
+}
+
+.mitem .hlist4 li img,
+.mitem .hlist7 li img {
+    height: 174px;
+    width: 174px;
+    transition: transform .2s linear 0s;
+}
+
+.mitem .hlist4 li .txt,
+.mitem .hlist7 li .txt {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin: 15px 0 0;
+    overflow: hidden;
+}
+
+.mitem .hlist4 li .st,
+.mitem .hlist7 li .st {
+    color: #999;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.mitem .hlist4 li .money,
+.mitem .hlist7 li .money {
     font-size: 14px;
     text-align: left;
+}
+
+.mitem .hlist4 li .gx,
+.mitem .hlist7 li .gx {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    text-align: left;
+    background: #000;
+    opacity: .65;
+    color: #fff;
+    line-height: 20px;
+    padding: 10px;
+    width: 202px;
+    font-size: 12px;
+    display: none;
+}
+
+.hlist2 li:hover .gx {
+    display: block;
+}
+
+.mitem .content .mcenter4 {
+    width: 890px;
+    float: left;
+    border-top: 1px solid #e5e5e5;
+    overflow: hidden;
+    height: 578px;
+}
+
+.mitem .hlist3 li,
+.mitem .hlist5 li {
+    float: left;
+    height: 267px;
+    width: 185px;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    padding: 10px 18px 10px 18px;
+    position: relative;
+}
+
+.mitem .hlist3 li .photo,
+.mitem .hlist5 li .photo {
+    display: block;
+    text-align: center;
+}
+
+.mitem .hlist3 li img,
+.mitem .hlist5 li img {
+    height: 174px;
+    width: 174px;
+    transition: transform .2s linear 0s;
+}
+
+.mitem .hlist3 li .txt,
+.mitem .hlist5 li .txt {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin: 15px 0 0;
+    overflow: hidden;
+}
+
+.mitem .hlist3 li .st,
+.mitem .hlist5 li .st {
+    color: #999;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.mitem .hlist3 li .money,
+.mitem .hlist5 li .money {
+    font-size: 14px;
+    text-align: left;
+}
+
+.mitem .hlist3 li .gx,
+.mitem .hlist5 li .gx {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    text-align: left;
+    background: #000;
+    opacity: .65;
+    color: #fff;
+    line-height: 20px;
+    padding: 10px;
+    width: 202px;
+    font-size: 12px;
+    display: none;
+}
+
+.ca4 {
+    display: inline-block;
+}
+
+.trt {
+    display: inline-block;
+}
+
+.ht {
+    display: inline-block;
+}
+
+.mik {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 5px;
+}
+
+.mik .content {
+    position: relative;
+}
+
+.mik h2 {
+    font-size: 20px;
+    font-family: "微软雅黑";
+    text-align: center;
+    color: #333;
+    font-weight: normal;
+}
+
+.mik .spanr {
+    left: 50%;
+    top: 50%;
+    margin-top: -0.5px;
+    margin-left: -93px;
+}
+
+.mik .spant {
+    left: 50%;
+    top: 50%;
+    margin-top: -0.5px;
+    margin-left: 116px;
+
+}
+
+.mik .spanr {
+    position: absolute;
+    display: inline-block;
+    height: 0;
+    width: 46px;
+    border-bottom: 1px solid #ccc;
+}
+
+.mik .spant {
+    position: absolute;
+    display: inline-block;
+    height:0;
+    width: 46px;
+    border-bottom: 1px solid #ccc;
+}
+
+.list li {
+    width: 228px;
+    float: left;
+    border: 1px solid #e5e5e5;
+    padding-bottom: 20px;
+    margin: 0 4px 12px;
+    text-align:center;
+}
+
+.list li a {
+    display: block;
+    text-align: center;
+    margin: 30px 0 34px;
+}
+.list li img {
+    width: 170px;
+    height: 170px;
+    transition: transform .2s linear 0s;
+}
+.list h2{
+    font-weight:normal;
+    font-size: 14px;
+}
+.list h2:hover{
+    color: #0cb95f;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.list p{
+    line-height: 20px;
+    font-family: Arial;
+    color: #e50000;
+    font-size: 14px;
 }

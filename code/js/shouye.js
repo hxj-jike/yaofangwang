@@ -1,12 +1,13 @@
-$(function(){
-    $(".daohang").hover(function(){
-        $(".other").css('display','block');
-        $(".other").css('border-top','none');
-    },function(){
-        $(".other").css('display','none');
-      });
-      var oca = document.getElementsByClassName("ca");
+$(function () {
+    $(".daohang").hover(function () {
+        $(".other").css('display', 'block');
+        $(".other").css('border-top', 'none');
+    }, function () {
+        $(".other").css('display', 'none');
+    });
+    var oca = document.getElementsByClassName("ca");
     var ocat = document.getElementsByClassName("subcat");
+
     function fn() {
         for (var j = 0; j < oca.length; j++) {
             oca[j].className = '';
@@ -26,7 +27,7 @@ $(function(){
             ocat[this.index].style.display = "none";
         }
     }
-      var arr = ["e7363d790a630e61df70c034717a844f.png", "db6609a61bf56afd781453277c4836d9.jpg",
+    var arr = ["e7363d790a630e61df70c034717a844f.png", "db6609a61bf56afd781453277c4836d9.jpg",
         "6de8296ccb0b3b285a77bf9c648e0352.jpg", "792358eb23769f079a825e84f7654b10.png",
         "e7363d790a630e61df70c034717a844f.png"
     ];
@@ -138,11 +139,29 @@ $(function(){
         //3、自动播放
         autoPlay();
     });
-    $(".snavs a").hover(function() {
-        $(".snavs a").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
+    $(".snavs span").hover(function () {
+        $(".snavs span").eq($(this).index()).addClass("co").siblings().removeClass('co');
         $(".hlist2").hide().eq($(this).index()).show();
-        //另一种方法: $("div").eq($(".tab li").index(this)).addClass("on").siblings().removeClass('on'); 
 
     });
-    
+    $(".bn").hover(function () {
+        $(".bn").eq($(this).index()).addClass("co1").siblings().removeClass('co1');
+        $(".hlist3").hide().eq($(this).index()).show();
+
+    });
+    $(".ca4").hover(function () {
+        $(".ca4").eq($(this).index()).addClass("co2").siblings().removeClass('co2');
+        $(".hlist5").hide().eq($(this).index()).show();
+
+    });
+    $(".trt").hover(function () {
+        $(".trt").eq($(this).index()).addClass("co3").siblings().removeClass('co3');
+        $(".hlist6").hide().eq($(this).index()).show();
+
+    });
+    $(".ht").hover(function () {
+        $(".ht").eq($(this).index()).addClass("co4").siblings().removeClass('co4');
+        $(".hlist7").hide().eq($(this).index()).show();
+
+    });
 })
