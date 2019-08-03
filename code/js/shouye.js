@@ -164,4 +164,10 @@ $(function () {
         $(".hlist7").hide().eq($(this).index()).show();
 
     });
+    $(".hnav li").hover(function () {
+        $(".hanv li").eq($(this).index()).addClass("co5").siblings().removeClass('co5');
+
+        $(".linktxt").hide().eq($(this).index()).show();
+    });
+
 })
