@@ -3,10 +3,10 @@ header("Content-Type:text/html;charset=UTF-8");
 //连接数据库f
 include 'conn.php';
 //接收前端传过来的用户名，查询数据库看是否存在,返回提示信息
-$username = isset($_POST['username'])?$_POST['username']: '';
+$phone = isset($_POST['phone'])?$_POST['phone']: '';
 // echo $username; 
 //写sql语句
-$sql = "SELECT * FROM user where username = '$username'";
+$sql = "SELECT * FROM user where phone ='$phone'";
 //执行sql语句
 $res  = $conn->query($sql);
 //得到结果集
@@ -20,5 +20,4 @@ if($res->num_rows){
 // 关闭数据库
 $res->close();
 $conn->close();
-
 ?>

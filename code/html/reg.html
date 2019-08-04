@@ -5,311 +5,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/reg.css">
+    <title>register</title>
+    <!-- 三级 -->
     <script src="../js/jquery-3.4.1.js"></script>
     <script src="../js/reg.js"></script>
-
+    <link rel="stylesheet" href="../css/reg.css">
 </head>
 
 <body>
-    <div class="header">
-        <div class="content">
-            <ul class="left">
-                <li id="weixin"><i class="icons wx"></i><a title="关注药房网商城微信公众账号，随时随地查药价！" href="">微信查价</a><s></s>
-                </li>
-                <li id="app"><i class="icons app"></i><a href="" target="_blank" title="下载药房网商城APP">手机App</a>
-                </li>
-            </ul>
-            <ul class="right" id="TopNav">
-                <li class="daohang">
-                    <a href="" class="disa" style="text-decoration:none;">网站导航</a>
-                    <i class="icons dorpdown"></i>
-                    <div class="line"></div>
-                    <div class="other">
-                        <div class="item">
-                            <div class="h1">健康咨询</div>
-                            <a href="">医药资讯</a>
-                            <a href="">疾病知识</a>
-                            <a href="">用药指导</a>
-                            <a href="">健康问答</a>
-                            <a href="">疾病症状库</a>
-                        </div>
-                        <div class="item">
-                            <div class="h1">特色服务</div>
-                            <a href="">健康专题</a>
-                            <a href="">健康百科</a>
-                            <a href="">医院大全</a>
-                            <a href="">药房联盟</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="n"><a href="" class="disa" rel="nofollow">客服中心</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="nav">
-        <div class="content">
-            <div class="ct">
-                <a href=""><img src="../img/logo (1).jpg" alt=""></a>
-                <div class="he"><span>用户注册</span></div>
-            </div>
-        </div>
-    </div>
-    <div class="regin">
-        <div class="content">
-            <div class="form">
-                <div class="tabnav3 clearfix">
-                    <ul class="navul">
-                        <li class="first">
-                            <a href="javascript:void(0);" class="cur">
-                                个人用户<i>
-                                </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/storeregister.html" class="">
-                                供应商入驻<i>
-                                </i>
-                            </a>
-                        </li>
-                    </ul>
-
-
-                </div>
-                <div class="items">
-                    <ul class="iform" id="register_form">
-                        <li class="line">
-                            <label>注册信息（必填项）</label>
-                        </li>
-                        <li>
-                            <span class="note">
-                                <label>*</label>用户名：
-                            </span>
-                            <span class="bginput">
-                                <i class="user">
-                                </i>
-                                <input type="text" id="txtUserName" rege="/^[a-zA-Z0-9_-]{2,18}$/" maxlen="18"
-                                    minlen="2" maxlength="18" class="input_big" errinfo=""
-                                    info="请输入你的用户名，2-18个字符，只能字母、数字、中/下划线" remote-errinfo="用户名已注册，请更换"
-                                    remote-url="/common/IsAccountNameExist?account_name=">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li>
-                            <span class="note">
-                                <label>*</label>登录密码：
-                            </span>
-                            <span class="bginput">
-                                <i class="pass">
-                                </i>
-                                <input type="password" autocomplete="no" id="txtUserPass"
-                                    rege="/^(?![0-9]+$)(?![a-zA-Z]+$)/" maxlen="20" minlen="6" maxlength="20"
-                                    class="input_big" errinfo="" info="请输入您的登录密码，6-20位数字和字符组合，两边不能有空符号">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li>
-                            <span class="note">
-                                <label>*</label>确认密码：
-                            </span>
-                            <span class="bginput">
-                                <i class="pass">
-                                </i>
-                                <input type="password" autocomplete="no" id="txtUserPass2"
-                                    rege="/^(?![0-9]+$)(?![a-zA-Z]+$)/" maxlen="20" minlen="6" maxlength="20"
-                                    class="input_big" errinfo="" info="请输入您的确认密码，6-20位数字和字符组合，必须和密码相等"
-                                    equalto-errinfo="两次输入的密码不一致，请重新输入！" equalto="#txtUserPass">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li>
-                            <span class="note">
-                                <label>*</label>手机号码：
-                            </span>
-                            <span class="bginput">
-                                <input type="text" id="txt_Mobile" rege="/^(1)[0-9]{10}$/" maxlen="11" minlen="11"
-                                    maxlength="11" class="input_big s" errinfo="" store="" info="请输入您的手机号码，11位数字"
-                                    remote-errinfo="手机号已注册，请更换" remote-url="/common/isMobileExist?mobile=">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li>
-                            <span class="note">
-                                <label>*</label>手机验证码：
-                            </span>
-                            <span class="bginput">
-                                <input type="text" id="txtMobileCode" rege="" maxlen="6" minlen="6" maxlength="6"
-                                    class="input_big s" errinfo="" style="width:172px;" info="请输入6位手机验证码">
-                            </span>
-                            <span class="bginput">
-                                <a href="javascript:void(0);" class="btn9 fl js-send-msg" data-mobile="#txt_Mobile"
-                                    data-type="2" data-isvoice="0">发送验证码</a>
-                                <a href="javascript:void(0);" class="btn9 fl js-count" style="display:none">请查收短信（<label
-                                        class="js-count-num">60</label>秒）</a>
-                            </span>
-                            <span class="bginput">
-                                <a class="btn11 fl js-send-voice" href="javascript:void(0);"
-                                    style="display:none;padding:0 10px;" data-mobile="#txt_Mobile" data-type="2"
-                                    data-isvoice="1">收不到短信？使用语音验证码</a>
-                                <a href="javascript:void(0);" class="btn11 fl js-count "
-                                    style="display:none">电话拨打中...请留意来电（<label class="js-count-num">60</label>秒）</a>
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li class="line">
-                            <label>个人信息（选填项）</label>
-                        </li>
-                        <li>
-                            <span class="note">真实姓名：</span>
-                            <span class="bginput">
-                                <input type="text" id="txt_RealName" rege="/^([\u4E00-\u9FA5]+|[a-zA-Z]+)$/" maxlen="16"
-                                    minlen="2" maxlength="60" class="input_big s" check="false" errinfo=""
-                                    info="请输入您的真实姓名，至少2个字符">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li>
-                            <span class="note">电子邮箱：</span>
-                            <span class="bginput">
-                                <input type="text" id="txtEmail"
-                                    rege="/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/"
-                                    maxlen="100" minlen="6" maxlength="100" class="input_big s" check="false" errinfo=""
-                                    info=" 请输入您的电子邮箱，格式如：xxx@qq.com，6-100个字符">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li class="display:none;">
-                            <span class="note">固定电话：</span>
-                            <span class="bginput">
-                                <input type="text" id="txt_phone1" rege="/^[0-9]\d{2,3}$/" maxlen="4" minlen="3"
-                                    maxlength="4" class="input_big s" check="false" errinfo="" style="width:60px;"
-                                    par="txt" info="电话区号3或4位数字">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                            <span class="bginput">
-                                &nbsp;&nbsp;- &nbsp;<input type="text" id="txt_phone2" rege="/^[0-9]\d{6,7}$/"
-                                    maxlen="8" minlen="7" maxlength="8" class="input_big s" check="false" errinfo=""
-                                    style="width:175px;" info="电话号码7或8位数字（可选填）">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li>
-                            <span class="note">所在地区：</span>
-                            <span class="bginput">
-                                <input type="hidden" id="hf_accountRegionId">
-                                <select id="accountProvince" class="iselect big" info="请选择您的所在地区" check="false">
-                                    <option value="-1">-请选择-</option>
-                                    <option value="40">北京市</option>
-                                    <option value="4821">天津市</option>
-                                    <option value="95">上海市</option>
-                                    <option value="96">重庆市</option>
-                                    <option value="97">黑龙江</option>
-                                    <option value="1265">吉林省</option>
-                                    <option value="1316">辽宁省</option>
-                                    <option value="1377">河北省</option>
-                                    <option value="1525">山西省</option>
-                                    <option value="1633">内蒙古</option>
-                                    <option value="1726">江苏省</option>
-                                    <option value="1792">浙江省</option>
-                                    <option value="1862">安徽省</option>
-                                    <option value="1942">福建省</option>
-                                    <option value="2011">江西省</option>
-                                    <option value="2103">山东省</option>
-                                    <option value="2212">河南省</option>
-                                    <option value="2339">湖北省</option>
-                                    <option value="2418">湖南省</option>
-                                    <option value="2521">广东省</option>
-                                    <option value="2610">广西</option>
-                                    <option value="2700">海南省</option>
-                                    <option value="2721">四川省</option>
-                                    <option value="2882">贵州省</option>
-                                    <option value="2970">云南省</option>
-                                    <option value="3112">西藏</option>
-                                    <option value="3192">陕西省</option>
-                                    <option value="3302">甘肃省</option>
-                                    <option value="3388">青海省</option>
-                                    <option value="3436">宁夏</option>
-                                    <option value="3442">新疆</option>
-                                </select>&nbsp;&nbsp;
-                                <select id="accoutCity" class="iselect big disp" check="false"></select>&nbsp;&nbsp;
-                                <select id="accountDistrict" class="iselect big disp" check="false"></select>
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li>
-                            <span class="note">详细地址：</span>
-                            <span class="bginput">
-                                <input n="" type="text" id="txtAddress" rege="" placeholder="填写详细的街道名及门牌号、楼宇名及房间号"
-                                    maxlen="128" minlen="1" maxlength="128" class="input_big s" check="false" errinfo=""
-                                    style="width:440px;background:#fbfbfb;" disabled="disabled"
-                                    info="请输入完整的详细地址信息，两边不能有空符号">
-                                <input type="hidden" id="hf_lat" value="">
-                                <input type="hidden" id="hf_lng" value="">
-                            </span>
-                            <span class="oninfo">
-                            </span>
-                        </li>
-                        <li class="license">
-                            <div class="ckdiv">
-                                <div class="ck">
-                                    <i class="checked">
-                                    </i>
-                                </div>我同意
+    <div id="register">
+        <div class="header_top">
+            <div class="container">
+                <ul class="left">
+                    <li id="weixin">
+                        <i class="icons wx"></i>
+                        <a title="关注药房网商城微信公众账号，随时随地查药价！" href="" rel="nofollow">微信查价</a>
+                        <s></s>
+                    </li>
+                    <li id="app">
+                        <i class="icons app"></i>
+                        <a href="" target="_blank" title="下载药房网商城APP" rel="nofollow">手机APP</a>
+                    </li>
+                </ul>
+                <ul class="right" id="TopNav">
+                    <li class="daohang">
+                        <a href="" class="disa" style="text-decoration:none;">网站导航</a>
+                        <i class="icons dorpdown"></i>
+                        <div class="line"></div>
+                        <div class="other">
+                            <div class="item">
+                                <div class="h1">健康咨询</div>
+                                <a href="">医药资讯</a>
+                                <a href="">疾病知识</a>
+                                <a href="">用药指导</a>
+                                <a href="">健康问答</a>
+                                <a href="">疾病症状库</a>
                             </div>
-                            <a href="//reg.yaofangwang.com/agreement.html">《药房网商城入驻用户服务协议》</a>
-                        </li>
-                        <li class="op">
-                            <a class="btn2 b2 js-login-submit" href="javascript:;" data-form="#register_form">立即注册</a>
-                            <a href="javascript:void(0);" id="BtnSubmit3" class="btn8 b2 fl dis"
-                                style="display:none;">正在提交，请稍等片刻！</a>
-                        </li>
-                    </ul>
+                            <div class="item">
+                                <div class="h1">特色服务</div>
+                                <a href="">健康专题</a>
+                                <a href="">健康百科</a>
+                                <a href="">医院大全</a>
+                                <a href="">药房联盟</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="n">
+                        <a href="" class="disa" rel="nofollow">客服中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header small">
+            <div class="container">
+                <div class="logo" style="width:378px;">
+                    <a href="###" class="name" title="药房网商城(网上药店) ">
+                        <img src="../img/logo (1).jpg" alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!">
+                    </a>
+                    <div class="sub">
+                        <span class="sub_name">用户注册 </span>
+                    </div>
+                    <div class="step"></div>
                 </div>
             </div>
         </div>
+        <div class="bg_strech">
+            <div class="register">
+                <div class="container clearfix">
+                    <div class="form">
+                        <ul class="navul">
+                            <li class="frist">
+                                <a href="" class="cur">个人用户
+                                    <i></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="register.html">供应商入驻</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="items">
+                        <ul class="iform" id="register_form">
+                            <li class="line">
+                                <label>注册信息（必填项）</label>
+                            </li>
 
-    </div>
-    <div class="footer small">
-        <div class="content">
+                            <li>
+                                <span class="note">
+                                    <label for="">*</label> 用户名:</span>
+                                <span class="bginput">
+                                    <i class="user"></i>
+                                    <input type="text" id="username" style="height: 36px;">
+                                </span>
+                                <span class="inf1"></span>
+
+                                </span>
+                            </li>
+                            <li>
+                                <span class="note">
+                                    <label for="">*</label> 登录密码:</span>
+                                <span class="bginput">
+                                    <i class="pass1"></i>
+                                    <input type="password" id="pwd" class="input_big" style="height: 36px;">
+                                </span>
+                                <span class="inf2"></span>
+                            </li>
+                            <li>
+                                <span class="note">
+                                    <label for="confirm_pwd">*</label>确认密码:</span>
+                                <span class="bginput">
+                                    <i class="pass2"></i>
+                                    <input type="password" id="txtUserPass2" class="input_big" style="height: 36px;">
+                                </span>
+                                <span class="inf3"></span>
+                            </li>
+                            <li>
+                                <span class="note">
+                                    <label for="iphon">*</label>手机号码:</span>
+                                <span class="bginput">
+                                    <!-- <i class="pass"></i> -->
+                                    <input type="text" id="txt_Mobile" class="input_big s" style="height: 36px;">
+                                </span>
+                                <span class="inf4"></span>
+                            </li>
+                            <!-- 手机验证码 -->
+                            <li>
+                                <span class="note">
+                                    <label for="iphon">*</label>手机验证码:</span>
+                                <span class="bginput" style="margin-left: -15px; border: none">
+
+                                    <input type="text" id="txtMobileCode" class="input_big s">
+
+                                    <span class="bginputshouji" style="display: block;">
+                                        <a id="btn" href="###">发送验证码</a>
+                                        <a id="tex" style="display: none;" href="">请查收短信</a>
+                                        <label for="" class="yanzheng" style="display: none;">60</label>
+                                    </span>
+                                    <!-- <span class="inf"></span> -->
+                                </span>
+                            </li>
+                        </ul>
+                        <!-- 
+
+                     -->
+                        <ul class="selct">
+                            <li class="line">
+                                <label for="">个人信息（选填项）</label>
+                            </li>
+                            <!-- 手机验证码以上 -->
+                            <li>
+                                <span class="note">真实姓名：</span>
+                                <span class="bginput">
+                                    <input type="text" id="txt_RealName" class="input_big s">
+                                </span>
+                                <span class="inf5"></span>
+                            </li>
+                            <li>
+                                <span class="note">电子邮箱：</span>
+                                <span class="bginput">
+                                    <input type="text" id="txtEmail" class="input_big s">
+                                </span>
+                                <span class="inf6"></span>
+                            </li>
+                            <!-- 固定电话 -->
+                            <li>
+                                <span class="note">固定电话：</span>
+                                <span class="bginput" id="guding">
+                                    <input type="text" id="txtphone1" class="input_big s">
+                                    <span class="inf7">&nbsp;&nbsp;- &nbsp;</span>
+                                    <input type="text" id="txtphone2" class="input_big s">
+                                </span>
+                                <span class="inf8"></span>
+                            </li>
+                            <!-- 固定电话 -->
+                            <li>
+                                <span class="note">所在地区：</span>
+                                <span class="bginput">
+                                    <input type="hidden" id="hf_accountRegionId">
+                                    <div data-toggle="distpicker">
+                                        <select data-province="--选择省--" style="width: 90px;height: 38px;border: 1px solid #cccccc;outline:0;"></select>
+                                        <select data-city="--选择市--" style="width: 90px;height: 38px;border: 1px solid #cccccc;outline:0;"></select>
+                                        <select data-district="--选择区--" style="width: 90px;height: 38px;border: 1px solid #cccccc;outline:0;"></select>
+                                    </div>
+                                </span>
+                                <span class="inf8"></span>
+                            </li>
+                            <li>
+                                <span class="note">详细地址：</span>
+                                <span>
+                                    <input type="text" id="txtAddress" class="input_big s"  placeholder="" value="" >
+                                    
+                                    <!-- <input type="hidden" id="hf_lat" value="">
+                                    <input type="hidden" id="hf_lng" value=""> -->
+                                </span>
+                                <!-- <span class="inf"></span> -->
+                            </li>
+                            <div class="liandong" style="position: absolute;top: 695px;left: 200px;">
+                                <span class="inf"></span></span>  <span class="inf"></span> <span class="inf"></span>
+                            </div>
+                            <li class="license">
+                                <div class="ckdiv">
+                                    <div class="ck">
+                                        <i class="checked"> 
+                                        
+                                        </i>
+                                    </div>
+                                    <p class="aggre"><b>我同意</b>
+                                        <a href="" style="color: #0cb95f;"></a><i id="xieyi" >《药房网商城入驻用户服务协议》</i></a>
+                                    </p>
+
+                                </div>
+                            </li>
+                            <li class="op">
+                                <a href="###" class="btn2">立即注册</a>
+                                <!-- <a href="###" id="BtnSubmit3" class="btn8">正在提交，请稍等片刻！</a> -->
+                               <span class="inf" style="display:none;" >正在提交，请稍等片刻！</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
             <div class="simple">
                 <div class="container small">
-                    <p><a class="first" href="" target="_blank" rel="nofollow">关于我们</a> | <a
-                            href="//www.yaofangwang.com/qualification.html" target="_blank" rel="nofollow">资质证书</a> | <a
-                            href="//www.yaofangwang.com/joinin.html" target="_blank" rel="nofollow">商家入驻</a> | <a
-                            href="//www.yaofangwang.com/contact.html" target="_blank" rel="nofollow">联系我们</a> | <a
-                            href="//www.yaofangwang.com/recruitment.html" target="_blank" rel="nofollow">工作机会</a> | <a
-                            href="//www.yaofangwang.com/help/believe.html" target="_blank" rel="nofollow">帮助中心</a> | <a
-                            href="//www.yaofangwang.com/statement.html" target="_blank" rel="nofollow">法律声明</a> | <a
-                            href="//www.yaofangwang.com/sitemap.html" target="_blank">网站地图</a> | <a
-                            href="//www.yaofangwang.com/friendlink.html" target="_blank">友情链接</a> | <a
-                            href="//www.yaofangwang.com/on-sale.html" target="_blank">在售商品</a> | <a
-                            href="//www.yaofangwang.com/off-sale.html" target="_blank">下架商品</a> | <a
-                            href="//www.yaofangwang.com/detail-map.html" target="_blank">商品索引</a> | <a
-                            href="//www.yaofangwang.com/category-map.html" target="_blank">商品分类</a> | <a
-                            href="//www.yaofangwang.com/search-map.html" target="_blank">热门搜索</a></p>
-                    <p class="zz clearfix" style="text-align: center; margin-left:180px;" >
-                        <span>互联网药品交易服务资格证编号:<a
-                                href="http://app2.sfda.gov.cn/datasearchp/index1.do?tableId=33&amp;tableName=TABLE33&amp;tableView=%BB%A5%C1%AA%CD%F8%D2%A9%C6%B7%BD%BB%D2%D7%B7%FE%CE%F1&amp;Id=68"
-                                rel="nofollow" target="_blank">国A20110001</a></span>
-                        <span>互联网药品信息服务资格证编号:<a
-                                href="http://app2.sfda.gov.cn/datasearchp/index1.do?tableId=28&amp;tableName=TABLE28&amp;tableView=%BB%A5%C1%AA%CD%F8%D2%A9%C6%B7%D0%C5%CF%A2%B7%FE%CE%F1&amp;Id=4601"
-                                rel="nofollow" target="_blank">(沪)-经营性-2012-0003</a></span>
-                        <span><a target="_blank" href="http://www.beian.miit.gov.cn"
-                                rel="nofollow">ICP备案号：沪ICP备07012885号</a></span>
-                        <span class="gaba"><img src="//c1.yaofangwang.net/common/images/gaba.png"><a target="_blank"
-                                href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502002155"
-                                rel="nofollow">沪公网安备 31011502002155号</a></span>
+                    <p>
+                        <a href="">关于我们</a> |
+                        <a href="">资质证书</a> |
+                        <a href="">商家入驻</a> |
+                        <a href="">联系我们</a> |
+                        <a href="">工作机会</a> |
+                        <a href="">帮助中心</a> |
+                        <a href="">法律声明</a> |
+                        <a href="">网站地图</a> |
+                        <a href="">友情链接</a> |
+                        <a href="">在售商品</a> |
+                        <a href="">下架商品</a> |
+                        <a href="">商品索引</a> |
+                        <a href="">商品分类</a> |
+                        <a href="">热门搜索</a>
+                    </p>
+                    <p class="zz clearfix">
+                        <span>
+                            互联网药品交易服务资格证编号:
+                            <a href="">国A20110001</a>
+                        </span>
+                        <span>
+                            互联网药品信息服务资格证编号:
+                            <a href="">(沪)-经营性-2012-0003</a>
+                        </span>
+                        <span>
+                            <a href="">ICP备案号:沪ICP备07012885号</a>
+                        </span>
+                        <span class="gaba">
+                            <img class="police" src="../img/gaba.png" alt="">
+                            <a href="">沪公网安备 31011502002155号</a>
+                        </span>
                     </p>
                     <p class="copy">©2007-2019&nbsp;&nbsp;药房网商城版权所有&nbsp;&nbsp;上海伊邦医药信息科技有限公司</p>
                     <p>本网站用字经北京北大方正电子有限公司授权许可</p>
@@ -317,7 +269,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
