@@ -13,5 +13,5 @@ header("Content-Type:text/html;charset=UTF-8");
     }
 
     // 检测有没有连接成功
-    echo '连接成功';
+    // echo '连接成功';
 ?>

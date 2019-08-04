@@ -22,32 +22,23 @@ $(function(){
         var isok6 = false;  
         var isok7 = false;
         var isok8 = false;  
-      $(function(){
+        $(function(){
+
+  
         $("#username").on("blur", function () {
             var username = $.trim($("#username").val());
             if (username.length == 0) {
-                inf1.innerHTML = '用户名不能为空';
+                inf1.innerHTML = '密码不能为空';
                 inf1.style.color = 'red';
-            } else if (username && regusername.test(username)) {
-                $.ajax({
-                    type: "post",
-                    url: 'http://127.0.0.1/yaofangwang/code/api/reg.php',
-                    data: 'username=' + username,
-                    success: function (res) {
-                        if (res == "yes") {
-                            inf1.innerHTML = '可以注册';
-                            inf1.style.color = '#58bc58';
-                            isok1 = true;
-                        } else {
-                            inf1.innerHTML = '该用名太受欢迎啦';
-                            inf1.style.color = 'red';
-                            isok1 = false;
-                        }
-                    }
-                });
-            } else {
+            } else if (!regusername.test(username)) {
                 inf1.innerHTML = '不符合规范';
                 inf1.style.color = 'red';
+                isok1 = false;
+
+            } else {
+                inf1.innerHTML = '可以注册';
+                inf1.style.color = '#58bc58';
+                isok1 = true;
             }
         })
             var passwordd = '';
@@ -90,27 +81,15 @@ $(function(){
                 if (phone.length == 0) {
                     inf4.innerHTML = '号码不能为空';
                     inf4.style.color = 'red';
-                } else if (phone && regphone.test(phone)) {
-                    $.ajax({
-                        type: "post",
-                        url:'../api/regi.php',
-                        data: 'phone=' + phone,
-                        success: function (res) {
-                            if (res == "yes") {
-                                inf4.innerHTML = '可以注册';
-                                inf4.style.color = '#58bc58';
-                                isok3 = true;
-                            } else {
-                                inf4.innerHTML = '该号码已经被注册';
-                                inf4.style.color = 'red';
-                                isok4 = false;
-                            }
-                        }
-                    });
-                } else {
+                } else if (!regphone.test(phone)) {
                     inf4.innerHTML = '不符合规范';
                     inf4.style.color = 'red';
                     isok4 = false;
+
+                } else {
+                    inf4.innerHTML = '可以注册';
+                    inf4.style.color = '#58bc58';
+                    isok4 = true;
                 }
             })
             $("#txt_RealName").on("blur", function () {
@@ -162,8 +141,8 @@ $(function(){
                 }
             })
             $("#txtphone2").on("blur", function () {
-                var telphone2 = $.trim($("#txtphone2").val());
-                if (telphone2.length == 0) {
+                var telphone2 = $.trim($("#txtphone2").val());           
+             if (telphone2.length == 0) {
                     inf8.innerHTML = '区号不能为空';
                     inf8.style.color = 'red';
                 } else if (!regtelphone2.test(telphone2)) {
@@ -177,27 +156,28 @@ $(function(){
                     isok8 = true;
                 }
             })
-            $("#regbtn").on("click", function () {
+            $(".btn2").on("click", function () {
                 var username = $("#username").val();
                 var password = $("#pwd").val();
-                var phone = $("#phone").val();
-                var email = $("#email").val();
-                if (isok1 == true && isok2 == true && isok3 == true && isok4 == true && isok5 == true) {
+                var phone = $("#txt_Mobile").val();
+                var email = $("#txtEmail").val();
+                var realname = $("#txt_RealName").val();
+                var telphone1 = $("#txtphone1").val();
+                var telphone2 = $("#txtphone2").val();
+                if (isok1 == true && isok2 == true && isok3 == true && isok4 == true && isok5 == true && isok6 == true && isok7 == true && isok8 == true) {
                     $.ajax({
                         type: 'post',
-                        url: '../app/01.zhuce.php',
+                        url: 'http://127.0.0.1/yaofangwang/code/api/regc.php',
                         data: 'username=' + username + '&password=' + password + '&phone=' +
-                            phone + '&email=' + email,
+                            phone + '&realname=' + realname +'&email=' + email + '&telphone1=' + telphone1 + '&telphone2=' + telphone2,
                         success: function (str) {
                             if (str == 'yes') {
-                                alert('注册成功');
-                                window.location.href =
-                                    'http://127.0.0.1/zhuce.html/html/login.html'
+                     
                             }
-
-
                         }
                     })
+                    alert('注册成功');
+                    'http://127.0.0.1/yaofangwang/code/html/login.html';
                 } else {
                     alert("请验证输入信息是否正确");
                 }

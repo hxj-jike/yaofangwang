@@ -20,5 +20,4 @@ if($res->num_rows){
 // 关闭数据库
 $res->close();
 $conn->close();
-
 ?>

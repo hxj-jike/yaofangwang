@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -7,7 +8,183 @@
     <script src="../js/jquery-3.4.1.js"></script>
     <script src="../js/login.js"></script>
 </head>
+
 <body>
-    
+
+
+    <div class="header_top">
+        <div class="container">
+            <ul class="left">
+                <li id="weixin">
+                    <i class="icons wx"></i>
+                    <a title="关注药房网商城微信公众账号，随时随地查药价！" href="" rel="nofollow">微信查价</a>
+                    <s></s>
+                </li>
+                <li id="app">
+                    <i class="icons app"></i>
+                    <a href="" target="_blank" title="下载药房网商城APP" rel="nofollow">手机APP</a>
+                </li>
+            </ul>
+            <ul class="right" id="TopNav">
+                <li class="daohang">
+                    <a href="" class="disa" style="text-decoration:none;">网站导航</a>
+                    <i class="icons dorpdown"></i>
+                    <div class="line"></div>
+                    <div class="other">
+                        <div class="item">
+                            <div class="h1">健康咨询</div>
+                            <a href="">医药资讯</a>
+                            <a href="">疾病知识</a>
+                            <a href="">用药指导</a>
+                            <a href="">健康问答</a>
+                            <a href="">疾病症状库</a>
+                        </div>
+                        <div class="item">
+                            <div class="h1">特色服务</div>
+                            <a href="">健康专题</a>
+                            <a href="">健康百科</a>
+                            <a href="">医院大全</a>
+                            <a href="">药房联盟</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="n">
+                    <a href="" class="disa" rel="nofollow">客服中心</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header small">
+        <div class="container">
+            <div class="logo" style="width:378px;">
+                <a href="###" class="name" title="药房网商城(网上药店) ">
+                    <img src="../img/logo (1).jpg" alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!">
+                </a>
+                <div class="sub">
+                    <span class="sub_name">用户登录</span>
+                </div>
+                <div class="step"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="login">
+            <div class="right">
+                <div class="form-tab">
+                    <div class="tab-item tab-checked" data-bind="default">账号登录</div>
+                    <span class="tab-line"></span>
+                    <div class="tab-item" data-bind="quick">快捷登录</div>
+                </div>
+                <div class="form-tab-wrap">
+                    <div class="form">
+                        <div class="item"><span>欢迎登录药房网商城</span>
+                            <span class="r">没有账号？<a
+                                    href="http://127.0.0.1/yaofangwang/code/html/reg.html">立即注册</a></span>
+                        </div>
+
+                        <input name="__RequestVerificationToken" type="hidden"
+                            value="MFDjs16VVMr4CqMyLSgO8JebQN6t00MvawLyyvRH4k-vKYgscPDy46lhJ1nAipnQMdEK5L9TcuNidYi4YH3DtnCIXcouwMPbWgWChAj7who1">
+                        <div class="form_div mb0 js-form-default" data-bind="default">
+                            <div class="item"><span class="bginput"><input type="text" autocomplete="off"
+                                        placeholder="用户名 / 已验证邮箱或手机" class="input_big" id="txt_AccountName"
+                                        maxlength="128" value=""><i class="user"></i></span></div>
+                            <div class="item mt"><span class="bginput"><input type="password" autocomplete="off"
+                                        placeholder="登录密码" class="input_big" id="txt_Password" maxlength="60"><i
+                                        class="pass"></i></span></div>
+                            <div class="item mt js_div_validate" style="display:none;">
+                                <span class="bginput">
+                                    <input placeholder="请输入验证码" id="txt_ValidateCode" maxlength="4"
+                                        class="input_big short" style="width:296px;text-transform: uppercase;">
+                                    <div class="valid-img-wrap">
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="item">
+                                <div class="ckdiv">
+                                    <div class="ck"><i class=""></i></div>记住用户名
+                                </div><a class="r f" href="/account/forgetpsw">忘记密码？</a>
+                            </div>
+                        </div>
+
+                        <div class="form_div form-hide js-form-quick" data-bind="quick" style="display:none;">
+                            <div class="item mb"><span class="bginput quick-form"><input autocomplete="off" type="text"
+                                        id="txt_Mobile" placeholder="请输入手机号" class="input_big" maxlength="11"
+                                        value=""></span></div>
+                            <div class="item mb">
+                                <span class="bginput quick-form">
+                                    <input type="text" id="txt_ValidateCode1" autocomplete="off" placeholder="请输入图片验证码"
+                                        class="input_big" maxlength="4" value="" style="text-transform: uppercase;">
+                                    <div class="valid-img-wrap">
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="item mb">
+                                <span class="bginput quick-form"><input type="text" autocomplete="off"
+                                        id="txtMobileCode" placeholder="请输入短信验证码" class="input_big"
+                                        maxlength="6"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="ltip" style="margin-bottom: 15px;display:none" id="div_error"><i
+                                class="icons"></i><span class="text"></span></div>
+                        <div class="item op">
+                            <a id="btn_Submit" class="btn2 b2" href="javascript:;">立即登录</a>
+                        </div>
+                        <div class="item">使用其它方式登录：</div>
+                        <div class="other clearfix">
+                            <a class="qq" href="/vender/jump?type=qq"></a>
+                            <a class="weixin" href="/vender/jump?type=weixin"></a>
+                            <a class="alipay" href="/vender/jump?type=alipay"></a>
+                            <a class="weibo" href="/vender/jump?type=sina"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="simple">
+            <div class="container small">
+                <p>
+                    <a href="">关于我们</a> |
+                    <a href="">资质证书</a> |
+                    <a href="">商家入驻</a> |
+                    <a href="">联系我们</a> |
+                    <a href="">工作机会</a> |
+                    <a href="">帮助中心</a> |
+                    <a href="">法律声明</a> |
+                    <a href="">网站地图</a> |
+                    <a href="">友情链接</a> |
+                    <a href="">在售商品</a> |
+                    <a href="">下架商品</a> |
+                    <a href="">商品索引</a> |
+                    <a href="">商品分类</a> |
+                    <a href="">热门搜索</a>
+                </p>
+                <p class="zz clearfix">
+                    <span>
+                        互联网药品交易服务资格证编号:
+                        <a href="">国A20110001</a>
+                    </span>
+                    <span>
+                        互联网药品信息服务资格证编号:
+                        <a href="">(沪)-经营性-2012-0003</a>
+                    </span>
+                    <span>
+                        <a href="">ICP备案号:沪ICP备07012885号</a>
+                    </span>
+                    <span class="gaba">
+                        <img class="police" src="../img/gaba.png" alt="">
+                        <a href="">沪公网安备 31011502002155号</a>
+                    </span>
+                </p>
+                <p class="copy">©2007-2019&nbsp;&nbsp;药房网商城版权所有&nbsp;&nbsp;上海伊邦医药信息科技有限公司</p>
+                <p>本网站用字经北京北大方正电子有限公司授权许可</p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
