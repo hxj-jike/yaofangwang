@@ -1,32 +1,15 @@
-$(function () {
+$(function(){
+        $(".gh").hover(function () {
+            $(".gh").eq($(this).index()).addClass("co").siblings().removeClass('co');
+            $(".subcat").hide().eq($(this).index()).show();
+        });
+
     $(".daohang").hover(function () {
         $(".other").css('display', 'block');
         $(".other").css('border-top', 'none');
     }, function () {
         $(".other").css('display', 'none');
     });
-    var oca = document.getElementsByClassName("ca");
-    var ocat = document.getElementsByClassName("subcat");
-
-    function fn() {
-        for (var j = 0; j < oca.length; j++) {
-            oca[j].className = '';
-            ocat[j].style.display = 'none';
-        }
-    }
-    for (i = 0; i < oca.length; i++) {
-        var ca = oca[i];
-        ca.index = i;
-        ca.onmouseover = function () {
-            fn();
-            this.className = 'gh';
-            ocat[this.index].style.display = "block";
-        }
-        ca.onmouseout = function () {
-            fn();
-            ocat[this.index].style.display = "none";
-        }
-    }
     var arr = ["e7363d790a630e61df70c034717a844f.png", "db6609a61bf56afd781453277c4836d9.jpg",
         "6de8296ccb0b3b285a77bf9c648e0352.jpg", "792358eb23769f079a825e84f7654b10.png",
         "e7363d790a630e61df70c034717a844f.png"
