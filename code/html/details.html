@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/datails.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/datails.js"></script>
+</head>
+
+<body>
+    <div id="datails">
+        <div class="header">
+            <div class="content">
+                <ul class="left">
+                    <li class="n"><i class="icons fav"></i><a title="收藏药房网商城，下次访问更方便！" id="addFav"
+                            href="javascript:void(0);">收藏药房网商城</a><s></s></li>
+                    <li id="weixin"><i class="icons wx"></i><a title="关注药房网商城微信公众账号，随时随地查药价！" href="">微信查价</a><s></s>
+                        <div class="wxbig">
+                            <div class="pic"></div>
+                            <div class="txt">微信扫描二维码，查药比价更方便！</div>
+                        </div>
+                    </li>
+                    <li id="app"><i class="icons app"></i><a href="" target="_blank" title="下载药房网商城APP"
+                            rel="nofollow">手机APP</a>
+                        <div class="appbig">
+                            <div class="pic"></div>
+                            <div class="txt">药房网商城App，注册就送20元</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="right" id="TopNav">
+                    <li class="entry_btn">
+                        <a href="">商家入驻</a>
+                    </li>
+                    <li class="daohang">
+                        <a href="" class="disa" style="text-decoration:none;">网站导航</a>
+                        <i class="icons dorpdown"></i>
+                        <div class="line"></div>
+                        <div class="other">
+                            <div class="item">
+                                <div class="h1">健康咨询</div>
+                                <a href="">医药资讯</a>
+                                <a href="">疾病知识</a>
+                                <a href="">用药指导</a>
+                                <a href="">健康问答</a>
+                                <a href="">疾病症状库</a>
+                            </div>
+                            <div class="item">
+                                <div class="h1">特色服务</div>
+                                <a href="">健康专题</a>
+                                <a href="">健康百科</a>
+                                <a href="">医院大全</a>
+                                <a href="">药房联盟</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="n"><a href="" class="disa" rel="nofollow">客服中心</a></li>
+                    <li id="nav_postion"><a href="" class="disa">收藏夹</a><s></s>
+                    </li>
+                    <li class="person" id="user">
+                        <a href="" class="fl disa" rel="nofollow">个人中心</a>
+                        <i class="icons dorpdown"></i>
+                        <s></s>
+                        <div class="line"></div>
+                        <div class="menu_list">
+                            <a href="">需求管理</a>
+                            <a href="">地址管理</a>
+                            <a href="" rel="nofollow">我的咨询</a>
+                            <a href="">我的问答</a>
+                            <a href="">最近浏览</a>
+                        </div>
+                    </li>
+                    <li class="cart" id="cart">
+                        <i class="icons cart"></i>
+                        <a href="" class="hi nline disa">需求单(<label id="CartNum">0</label>)</a>
+                        <div class="line">
+                        </div>
+                        <div class="cart_box">您的购物车目前没有任何商品，建议您 <a class="green" href="">[登录]</a> 查看</div>
+                    </li>
+                    <li class="fix">
+                        <a href="" id="a_Referer" "="">登录</a> 
+                                    <a href="" id=" a_Referer_register">免费注册</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="headera">
+            <div class="content">
+                <div class="logo"><a href="" class="name" title="药房网商城(网上药店) "><img
+                            src="https://c1.yaofangwang.net/common/images/logo.jpg"
+                            alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!"></a></div>
+                <div class="search">
+                    <form method="get" action="" id="search" class="search_input" onsubmit="return false">
+                        <ul class="opt_list">
+                            <li class="current"><a href="javascript:void(0);" action="">商品</a><i></i></li>
+                            <div class="curt">
+                                <li><a href="javascript:void(0);" class="cur" action="">商家</a><i></i></li>
+                                <li><a href="javascript:void(0);" action="">厂家</a><i></i></li>
+                                <li><a href="javascript:void(0);" action="">医院</a><i></i></li>
+                            </div>
+                        </ul>
+                        <input type="text" placeholder="请输入批准文号、通用名、商品名、症状" value="" maxlength="60" autocomplete="off"
+                            id="keyword" class="txt">
+                        <button type="button" class="submit" id="btn_submit">搜索</button>
+                        <div class="suggest" id="result" style="display: none;"></div>
+                    </form>
+                    <ul id="hot_search" class="hot_search clearfix">
+                        <li class="noborder highlight"><a href="" title="补血">补血</a></li>
+                        <li><a href="" title="999">999</a></li>
+                        <li><a href="" title="片仔癀">片仔癀</a></li>
+                        <li><a href="" title="妈富隆">妈富隆</a></li>
+                        <li class="highlight"><a href="" title="阿胶">阿胶</a>
+                        </li>
+                        <li><a href="" title="金戈">金戈</a></li>
+                        <li><a href="" title="汤臣倍健">汤臣倍健</a></li>
+                        <li class="highlight"><a href="" title="领20元新人券">领20元新人券</a></li>
+                    </ul>
+                </div>
+                <div class="promise"><a href="" title="第三方药品交易服务平台,一站多店式药品订购体验,严格审核正规药房供货"></a></div>
+            </div>
+        </div>
+        <div class="nav1">
+            <div class="content">
+                <ul class="mainnav clearfix">
+                    <li class="category"><a href="javascript:void(0);">全部商品分类</a></li>
+                    <li class="home"><a id="home" href="">首页</a></li>
+                    <li><a id="yao" href="" title="药品超市">药品超市</a></li>
+                    <li><a id="yaodian" href="" title="药房联盟">药房联盟</a></li>
+                    <li><a id="yiyuan" href="" title="医院大全">医院大全</a></li>
+                    <li><a id="news" href="" title="医药资讯">医药资讯</a></li>
+                    <li><a id="ask" href="" title="用药问答">用药问答</a></li>
+                    <li><a id="joinin" href="" title="商家入驻">商家入驻</a></li>
+                </ul>
+                <div class="catlist" style="display:none;">
+                    <ul class="maincat b" style="opacity: 0.9;">
+                        <div class="gh co">
+                            <li class="zxyp" id="zxyp1">
+                                <h2><a href="" title="中西药品">中西药品</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="" title="肠胃用药">肠胃用药</a>
+                                    <a href="" title="感冒药">感冒药</a>
+                                    <a href="" title="心脑血管" class="n">心脑血管</a>
+                                </div>
+                                <i></i>
+                            </li>
+                        </div>
+                        <div class="gh">
+                            <li class="ylqx" id="ylqx1">
+                                <h2><a href="" title="医疗器械">医疗器械</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="" title="血压计">血压计</a>
+                                    <a href="" title="血糖仪">血糖仪</a>
+                                    <a href="" title="创可贴" class="n">创可贴</a>
+                                </div>
+                                <i></i>
+                            </li>
+                        </div>
+                        <div class="gh">
+                            <li class="ysbj" id="ysbj1">
+                                <h2><a href="" title="养生保健">养生保健</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="" title="滋补药酒">滋补药酒</a>
+                                    <a href="" title="补钙">补钙</a>
+                                    <a href="" title="补气养血" class="n">补气养血</a>
+                                </div>
+                                <i></i>
+                            </li>
+                        </div>
+                        <div class="gh">
+                            <li class="jsyp" id="jsyp1">
+                                <h2><a href="" title="计生用品">计生用品</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="" title="避孕套">避孕套</a>
+                                    <a href="" title="避孕药">避孕药</a>
+                                    <a href="" title="验孕检查" class="n">验孕检查</a>
+                                </div>
+                                <i></i>
+                            </li>
+                        </div>
+                        <div class="gh">
+                            <li class="zyyp" id="zyyp1">
+                                <h2><a href="" title="中药饮片">中药饮片</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="" title="西洋参">西洋参</a>
+                                    <a href="" title="三七">三七</a>
+                                    <a href="" title="灵芝孢子粉" class="n">灵芝孢子粉</a>
+                                </div>
+                                <i></i>
+                            </li>
+                        </div>
+                        <div class="">
+                            <li class="mrhf nb" id="mrhf1">
+                                <h2><a href="" title="美容护肤">美容护肤</a></h2>
+                                <div class="sub clearfix">
+                                    <a href="" title="祛痘">祛痘</a>
+                                    <a href="" title="祛斑">祛斑</a>
+                                    <a href="" title="疤痕修复" class="n">疤痕修复</a>
+                                </div>
+                                <i></i>
+                            </li>
+                        </div>
+
+                    </ul>
+
+
+                    <div class="subcat clearfix active">
+                        <ul class="sitems">
+                            <li>
+                                <a class="bit" href="//www.yaofangwang.com/catalog-10.html" target="_blank"
+                                    title="胃肠用药">胃肠用药<label><i></i></label></a>
+                                <a sortno="2" href="" title="胃炎">胃炎</a>
+                                <a sortno="3" href="" title="胃溃疡">胃溃疡</a>
+                                <a sortno="5" href="" title="急性肠炎">急性肠炎</a>
+                                <a sortno="6" href="" title="十二指肠溃疡">十二指肠溃疡</a>
+                                <a sortno="7" href="" title="胆囊炎">胆囊炎</a>
+                                <a sortno="8" href="" title="便秘">便秘</a>
+                                <a sortno="9" href="" title="消化不良">消化不良</a>
+                                <a sortno="10" href="" title="痔疮">痔疮</a>
+                                <a sortno="13" href="" title="腹痛腹泻">腹痛腹泻</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="呼吸系统">呼吸系统<label><i></i></label></a>
+                                <a sortno="2" href="" title="支气管炎">支气管炎</a>
+                                <a sortno="3" href="" title="肺热咳嗽">肺热咳嗽</a>
+                                <a sortno="4" href="" title="哮喘">哮喘</a>
+                                <a sortno="5" href="" title="气管炎">气管炎</a>
+                                <a sortno="6" href="" title="肺结核">肺结核</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="心脑血管">心脑血管<label><i></i></label></a>
+                                <a sortno="1" href="" title="高血压">高血压</a>
+                                <a sortno="2" href="" title="糖尿病">糖尿病</a>
+                                <a sortno="3" href="" title="冠心病">冠心病</a>
+                                <a sortno="5" href="" title="高血脂">高血脂</a>
+                                <a sortno="6" href="" title="心肌炎">心肌炎</a>
+                                <a sortno="8" href="" title="脑血栓">脑血栓</a>
+                                <a sortno="9" href="" title="中风偏瘫">中风偏瘫</a>
+                                <a sortno="10" href="" title="低血压">低血压</a>
+                                <a sortno="11" href="" title="静脉曲张">静脉曲张</a>
+                                <a sortno="12" href="" title="动脉硬化">动脉硬化</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="风湿骨科">风湿骨科<label><i></i></label></a>
+                                <a sortno="1" href="" title="风湿病">风湿病</a>
+                                <a sortno="2" href="" title="跌打损伤">跌打损伤</a>
+                                <a sortno="3" href="" title="关节炎">关节炎</a>
+                                <a sortno="4" href="" title="颈椎病">颈椎病</a>
+                                <a sortno="5" href="" title="骨质疏松">骨质疏松</a>
+                                <a sortno="6" href="" title="痛风">痛风</a>
+                                <a sortno="7" href="" title="坐骨神经痛">坐骨神经痛</a>
+                                <a sortno="8" href="" title="腰肌劳损">腰肌劳损</a>
+                                <a sortno="9" href="" title="肩周炎">肩周炎</a>
+                                <a sortno="10" href="" title="腰椎间盘突出">腰椎间盘突出</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="抗肿瘤药">抗肿瘤药<label><i></i></label></a>
+                                <a sortno="2" href="" title="白血病">白血病</a>
+                                <a sortno="3" href="" title="肺癌">肺癌</a>
+                                <a sortno="4" href="" title="胃癌">胃癌</a>
+                                <a sortno="5" href="" title="肝癌">肝癌</a>
+                                <a sortno="6" href="" title="肾癌">肾癌</a>
+                                <a sortno="7" href="" title="乳腺癌">乳腺癌</a>
+                                <a sortno="8" href="" title="卵巢癌">卵巢癌</a>
+                                <a sortno="9" href="" title="食道癌">食道癌</a>
+                                <a sortno="10" href="" title="鼻咽癌">鼻咽癌</a>
+                                <a sortno="11" href="" title="胰腺癌">胰腺癌</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="皮肤科药">皮肤科药<label><i></i></label></a>
+                                <a sortno="1" href="" title="皮炎">皮炎</a>
+                                <a sortno="2" href="" title="湿疹">湿疹</a>
+                                <a sortno="3" href="" title="痤疮">痤疮</a>
+                                <a sortno="4" href="" title="疥疮">疥疮</a>
+                                <a sortno="5" href="" title="疱疹">疱疹</a>
+                                <a sortno="6" href="" title="皮肤过敏">皮肤过敏</a>
+                                <a sortno="7" href="" title="蚊虫叮咬">蚊虫叮咬</a>
+                                <a sortno="8" href="" title="乌发生发">乌发生发</a>
+                                <a sortno="9" href="" title="白癜风">白癜风</a>
+                                <a sortno="10" href="" title="尖锐湿疣">尖锐湿疣</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="五官科药">五官科药<label><i></i></label></a>
+                                <a sortno="1" href="" title="眼科">眼科</a>
+                                <a sortno="2" href="" title="鼻科">鼻科</a>
+                                <a sortno="3" href="" title="耳科">耳科</a>
+                                <a sortno="4" href="" title="口腔科">口腔科</a>
+                                <a sortno="5" href="" title="喉科">喉科</a>
+                            </li>
+                            <li class="last">
+                                <a class="bit2" href="" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#zxyp1">
+                            <div class="pp clearfix">
+                                <a href="" target="_blank" title="云南白药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png"
+                                        alt="云南白药"></a>
+                                <a class="last" href="" target="_blank" title="仁和"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png"
+                                        alt="仁和"></a>
+                                <a href="" target="_blank" title="999 三九制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png"
+                                        alt="999 三九制药"></a>
+                                <a class="last" href="" target="_blank" title="白云山制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png"
+                                        alt="白云山制药"></a>
+                            </div>
+
+                            <div class="adout">
+                                <a href="" target="_blank" title="汇仁 肾宝片"><img
+                                        src="//c1.yaofangwang.net/common/upload/imggg/20170523/506def1e-65c9-497a-9e65-f8aaab8fcdaa9794.jpg"
+                                        alt="汇仁 肾宝片"></a>
+                            </div>
+
+                            <div class="tj">
+                                <h6>推荐商家</h6>
+                                <ul class="clearfix">
+                                    <li><a href="" target="_blank" title="靖宇县复康药店">靖宇县复康药店</a></li>
+                                    <li><a href="" target="_blank" title="西安裕庆大药房有限责任公司">西安裕庆大药房有限责任公司</a></li>
+                                    <li><a href="" target="_blank"
+                                            title="阜阳延生大药房零售连锁有限公司太和县吉祥路店">阜阳延生大药房零售连锁有限公司太和县吉祥路店</a></li>
+                                    <li><a href="" target="_blank" title="涿州市裕祺药品连锁有限公司十分公司">涿州市裕祺药品连锁有限公司十分公司</a></li>
+                                    <li><a href="" target="_blank" title="北京惠民泰康医药有限公司">北京惠民泰康医药有限公司</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix">
+                        <ul class="sitems">
+                            <li>
+                                <a class="bit" href="" target="_blank" title="家庭常备">家庭常备<label><i></i></label></a>
+                                <a sortno="1" href="" title="棉签">棉签</a>
+                                <a sortno="2" href="" title="纱布">纱布</a>
+                                <a sortno="3" href="" title="胶布">胶布</a>
+                                <a sortno="4" href="" title="绷带">绷带</a>
+                                <a sortno="5" href="" title="创口贴">创口贴</a>
+                                <a sortno="8" href="" title="消毒">消毒</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="检测设备">检测设备<label><i></i></label></a>
+                                <a sortno="1" href="" title="血压检测">血压检测</a>
+                                <a sortno="2" href="" title="血糖检测">血糖检测</a>
+                                <a sortno="3" href="" title="体温检测">体温检测</a>
+                                <a sortno="4" href="" title="听诊器">听诊器</a>
+                                <a sortno="5" href="" title="体重脂肪测量仪">体重脂肪测量仪</a>
+                                <a sortno="6" href="" title="CFMS血小板聚集功能检测试剂盒">CFMS血小板聚集功能检测试剂盒</a>
+                                <a sortno="7" href="" title="免疫缺陷病毒抗体">免疫缺陷病毒抗体</a>
+                                <a sortno="8" href="" title="标准对数视力表灯">标准对数视力表灯</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="助行器械">助行器械<label><i></i></label></a>
+                                <a sortno="1" href="" title="轮椅">轮椅</a>
+                                <a sortno="2" href="" title="拐杖">拐杖</a>
+                                <a sortno="5" href="" title="助行器">助行器</a>
+                                <a sortno="6" href="" title="接尿器">接尿器</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="康复理疗">康复理疗<label><i></i></label></a>
+                                <a sortno="1" href="" title="红外理疗">红外理疗</a>
+                                <a sortno="2" href="" title="按摩系列">按摩系列</a>
+                                <a sortno="3" href="" title="治疗仪器">治疗仪器</a>
+                                <a sortno="4" href="" title="足浴理疗">足浴理疗</a>
+                                <a sortno="5" href="" title="助听器">助听器</a>
+                                <a sortno="6" href="" title="疝气治疗">疝气治疗</a>
+                                <a sortno="7" href="" title="矫姿">矫姿</a>
+                                <a sortno="9" href="" title="频谱理疗">频谱理疗</a>
+                                <a sortno="10" href="" title="磁场理疗">磁场理疗</a>
+                                <a sortno="11" href="" title="鼻腔护理">鼻腔护理</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="中医器械">中医器械<label><i></i></label></a>
+                                <a sortno="1" href="" title="针灸">针灸</a>
+                                <a sortno="2" href="" title="拔罐">拔罐</a>
+                                <a sortno="3" href="" title="刮痧">刮痧</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="供氧器械">供氧器械<label><i></i></label></a>
+                                <a sortno="1" href="" title="制氧设备">制氧设备</a>
+                                <a sortno="3" href="" title="供氧辅助器械">供氧辅助器械</a>
+                                <a sortno="4" href="" title="氧气袋">氧气袋</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="外用贴膏">外用贴膏<label><i></i></label></a>
+                                <a sortno="1" href="" title="降温退烧">降温退烧</a>
+                                <a sortno="2" href="" title="风湿骨痛">风湿骨痛</a>
+                                <a sortno="3" href="" title="妇科外用">妇科外用</a>
+                                <a sortno="4" href="" title="五官外用">五官外用</a>
+                                <a sortno="5" href="" title="跌打损伤">跌打损伤</a>
+                                <a sortno="6" href="" title="晕车贴">晕车贴</a>
+                                <a sortno="7" href="" title="医用敷料">医用敷料</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="隐形眼镜">隐形眼镜<label><i></i></label></a>
+                                <a sortno="1" href="" title="隐形眼镜">隐形眼镜</a>
+                                <a sortno="2" href="" title="美瞳彩片">美瞳彩片</a>
+                                <a sortno="3" href="" title="周边护理">周边护理</a>
+                            </li>
+                            <li class="last">
+                                <a class="bit2" href="" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#ylqx1">
+                            <div class="pp clearfix">
+                                <a href="" target="_blank" title="云南白药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png"
+                                        alt="云南白药"></a>
+                                <a class="last" href="" target="_blank" title="仁和"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png"
+                                        alt="仁和"></a>
+                                <a href="" target="_blank" title="999 三九制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png"
+                                        alt="999 三九制药"></a>
+                                <a class="last" href="" target="_blank" title="白云山制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png"
+                                        alt="白云山制药"></a>
+                            </div>
+
+                            <div class="adout">
+                                <a href="" target="_blank" title="欧姆龙 电子血压计"><img
+                                        src="//c1.yaofangwang.net/common/upload/imggg/20170523/e9a48e9e-bda6-4ac6-a380-e2565c1e05391984.jpg"
+                                        alt="欧姆龙 电子血压计"></a>
+                            </div>
+
+                            <div class="tj">
+                                <h6>推荐商家</h6>
+                                <ul class="clearfix">
+                                    <li><a href="" target="_blank" title="龙江县德正医药有限公司">龙江县德正医药有限公司</a></li>
+                                    <li><a href="" target="_blank" title="四川云锦康药房有限公司">四川云锦康药房有限公司</a></li>
+                                    <li><a href="" target="_blank" title="合肥国瑾堂大药房有限公司">合肥国瑾堂大药房有限公司</a></li>
+                                    <li><a href="" target="_blank" title="涿州市裕祺药品连锁有限公司十一分公司">涿州市裕祺药品连锁有限公司十一分公司</a>
+                                    </li>
+                                    <li><a href="" target="_blank" title="孝感市亿生康大药房">孝感市亿生康大药房</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix">
+                        <ul class="sitems">
+                            <li>
+                                <a class="bit" href="" target="_blank" title="大众养生">大众养生<label><i></i></label></a>
+                                <a sortno="1" href="" title="滋补药酒">滋补药酒</a>
+                                <a sortno="2" href="" title="增强免疫">增强免疫</a>
+                                <a sortno="3" href="" title="补矿物质">补矿物质</a>
+                                <a sortno="4" href="" title="补维生素">补维生素</a>
+                                <a sortno="5" href="" title="改善睡眠">改善睡眠</a>
+                                <a sortno="6" href="" title="调节肠胃">调节肠胃</a>
+                                <a sortno="7" href="" title="缓解疲劳">缓解疲劳</a>
+                                <a sortno="8" href="" title="清咽润喉">清咽润喉</a>
+                                <a sortno="9" href="" title="保护视力">保护视力</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="男性保健">男性保健<label><i></i></label></a>
+                                <a sortno="1" href="" title="补肾壮阳">补肾壮阳</a>
+                                <a sortno="2" href="" title="养肝护肝">养肝护肝</a>
+                                <a sortno="4" href="" title="补充体力">补充体力</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="女性保健">女性保健<label><i></i></label></a>
+                                <a sortno="2" href="" title="美容养颜">美容养颜</a>
+                                <a sortno="3" href="" title="减肥瘦身">减肥瘦身</a>
+                                <a sortno="4" href="" title="调内分泌">调内分泌</a>
+                                <a sortno="5" href="" title="补气养血">补气养血</a>
+                                <a sortno="6" href="" title="丰胸美体">丰胸美体</a>
+                                <a sortno="7" href="" title="产前产后">产前产后</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="中老年保健"
+                                    style="width:80px;">中老年保健<label><i></i></label></a>
+                                <a sortno="1" href="" title="调节血脂">调节血脂</a>
+                                <a sortno="2" href="" title="调节血压">调节血压</a>
+                                <a sortno="3" href="" title="调节血糖">调节血糖</a>
+                                <a sortno="4" href="" title="增强免疫">增强免疫</a>
+                                <a sortno="5" href="" title="骨质疏松">骨质疏松</a>
+                                <a sortno="6" href="" title="润肠通便">润肠通便</a>
+                                <a sortno="7" href="" title="强身健体">强身健体</a>
+                                <a sortno="8" href="" title="抑制肿瘤">抑制肿瘤</a>
+                                <a sortno="9" href="" title="改善睡眠">改善睡眠</a>
+                                <a sortno="10" href="" title="心脏养护">心脏养护</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="青少年儿童"
+                                    style="width:80px;">青少年儿童<label><i></i></label></a>
+                                <a sortno="1" href="" title="增强免疫">增强免疫</a>
+                                <a sortno="2" href="" title="发育增高">发育增高</a>
+                                <a sortno="2" href="" title="补钙排铅">补钙排铅</a>
+                                <a sortno="3" href="" title="补维生素">补维生素</a>
+                                <a sortno="5" href="" title="健脑益智">健脑益智</a>
+                                <a sortno="6" href="" title="改善睡眠">改善睡眠</a>
+                            </li>
+                            <li class="last">
+                                <a class="bit2" href="" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#ysbj1">
+                            <div class="pp clearfix">
+                                <a href="" target="_blank" title="云南白药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png"
+                                        alt="云南白药"></a>
+                                <a class="last" href="" target="_blank" title="仁和"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png"
+                                        alt="仁和"></a>
+                                <a href="" target="_blank" title="999 三九制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png"
+                                        alt="999 三九制药"></a>
+                                <a class="last" href="" target="_blank" title="白云山制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png"
+                                        alt="白云山制药"></a>
+                            </div>
+
+                            <div class="adout">
+                                <a href="" target="_blank" title="鸿茅药酒"><img
+                                        src="//c1.yaofangwang.net/common/upload/imggg/20170714/7b5f2159-0b03-48a5-8de4-da1ae4f125dd4663.jpg"
+                                        alt="鸿茅药酒"></a>
+                            </div>
+
+                            <div class="tj">
+                                <h6>推荐商家</h6>
+                                <ul class="clearfix">
+                                    <li><a href="" target="_blank" title="威海祥运生医药连锁有限公司十一店">威海祥运生医药连锁有限公司十一店</a></li>
+                                    <li><a href="" target="_blank" title="临汾经济开发区国民健康药店">临汾经济开发区国民健康药店</a></li>
+                                    <li><a href="" target="_blank" title="陕西咸阳百姓乐大药房连锁有限公司">陕西咸阳百姓乐大药房连锁有限公司</a></li>
+                                    <li><a href="" target="_blank" title="涿州市裕祺药品连锁有限公司十三分公司">涿州市裕祺药品连锁有限公司十三分公司</a>
+                                    </li>
+                                    <li><a href="" target="_blank" title="德惠市惠发街众康大药房">德惠市惠发街众康大药房</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix">
+                        <ul class="sitems">
+                            <li>
+                                <a class="bit" href="" target="_blank" title="避孕用品">避孕用品<label><i></i></label></a>
+                                <a sortno="1" href="" title="避孕套">避孕套</a>
+                                <a sortno="2" href="" title="避孕药">避孕药</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="检测用品">检测用品<label><i></i></label></a>
+                                <a sortno="1" href="" title="排卵检测">排卵检测</a>
+                                <a sortno="2" href="" title="验孕检查">验孕检查</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="情趣用品">情趣用品<label><i></i></label></a>
+                                <a sortno="1" href="" title="润滑剂">润滑剂</a>
+                                <a sortno="2" href="" title="男用器具">男用器具</a>
+                                <a sortno="3" href="" title="女用器具">女用器具</a>
+                            </li>
+                            <li class="last">
+                                <a class="bit2" href="" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#jsyp1">
+                            <div class="pp clearfix">
+                                <a href="" target="_blank" title="云南白药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png"
+                                        alt="云南白药"></a>
+                                <a class="last" href="" target="_blank" title="仁和"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png"
+                                        alt="仁和"></a>
+                                <a href="" target="_blank" title="999 三九制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png"
+                                        alt="999 三九制药"></a>
+                                <a class="last" href="" target="_blank" title="白云山制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png"
+                                        alt="白云山制药"></a>
+                            </div>
+
+                            <div class="adout">
+                                <a href="" target="_blank" title="凸点螺纹凉感装·天然胶乳橡胶避孕套"><img
+                                        src="//c1.yaofangwang.net/common/upload/imggg/20170523/0ba58c6f-65bf-4ab7-907a-51979291e1021590.png"
+                                        alt="凸点螺纹凉感装·天然胶乳橡胶避孕套"></a>
+                            </div>
+
+                            <div class="tj">
+                                <h6>推荐商家</h6>
+                                <ul class="clearfix">
+                                    <li><a href="" target="_blank" title="长春市圣益轩大药房">长春市圣益轩大药房</a></li>
+                                    <li><a href="" target="_blank" title="元氏县泉兴大药房">元氏县泉兴大药房</a></li>
+                                    <li><a href="" target="_blank" title="菏泽天香医药连锁有限公司九五药房">菏泽天香医药连锁有限公司九五药房</a></li>
+                                    <li><a href="" target="_blank" title="涿州市裕祺药品连锁有限公司十四分公司">涿州市裕祺药品连锁有限公司十四分公司</a>
+                                    </li>
+                                    <li><a href="" target="_blank" title="瓦房店市明珠药房">瓦房店市明珠药房</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix">
+                        <ul class="sitems">
+                            <li>
+                                <a class="bit" href="" target="_blank" title="名贵中药">名贵中药<label><i></i></label></a>
+                                <a sortno="2" href="" title="冬虫夏草">冬虫夏草</a>
+                                <a sortno="3" href="" title="高丽参">高丽参</a>
+                                <a sortno="5" href="" title="红参">红参</a>
+                                <a sortno="6" href="" title="鹿茸">鹿茸</a>
+                                <a sortno="7" href="" title="白参">白参</a>
+                                <a sortno="8" href="" title="灵芝">灵芝</a>
+                                <a sortno="9" href="" title="燕窝">燕窝</a>
+                                <a sortno="15" href="" title="雪莲">雪莲</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="中药材">中药材<label><i></i></label></a>
+                                <a sortno="1" href="" title="枸杞">枸杞</a>
+                                <a sortno="2" href="" title="胖大海">胖大海</a>
+                                <a sortno="3" href="" title="当归">当归</a>
+                                <a sortno="4" href="" title="天麻">天麻</a>
+                                <a sortno="5" href="" title="三七">三七</a>
+                                <a sortno="6" href="" title="红枣">红枣</a>
+                                <a sortno="8" href="" title="决明子">决明子</a>
+                                <a sortno="9" href="" title="百合">百合</a>
+                                <a sortno="11" href="" title="红景天">红景天</a>
+                                <a sortno="12" href="" title="黄芪">黄芪</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="中药粉末">中药粉末<label><i></i></label></a>
+                                <a sortno="1" href="" title="润滑剂">润滑剂</a>
+                                <a sortno="2" href="" title="男用器具">男用器具</a>
+                                <a sortno="3" href="" title="女用器具">女用器具</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="茶">茶<label><i></i></label></a>
+                                <a sortno="1" href="" title="减肥茶">减肥茶</a>
+                                <a sortno="2" href="" title="降压茶">降压茶</a>
+                                <a sortno="3" href="" title="降糖茶">降糖茶</a>
+                                <a sortno="4" href="" title="苦丁茶">苦丁茶</a>
+                                <a sortno="4" href="" title="通便茶">通便茶</a>
+                                <a sortno="7" href="" title="花茶">花茶</a>
+                            </li>
+                            <li class="last">
+                                <a class="bit2" href="" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#zyyp1">
+                            <div class="pp clearfix">
+                                <a href="" target="_blank" title="云南白药"><img src="" alt="云南白药"></a>
+                                <a class="last" href="" target="_blank" title="仁和"><img src="../img/mrhf-logo-4.png"
+                                        alt="仁和"></a>
+                                <a href="" target="_blank" title="999 三九制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png"
+                                        alt="999 三九制药"></a>
+                                <a class="last" href="" target="_blank" title="白云山制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png"
+                                        alt="白云山制药"></a>
+                            </div>
+
+                            <div class="adout">
+                                <a href="" target="_blank" title="真仁堂 超细三七粉"><img
+                                        src="//c1.yaofangwang.net/common/upload/imggg/20170523/50804b31-6d21-4328-a411-c4675ff0f2a81330.png"
+                                        alt="真仁堂 超细三七粉"></a>
+                            </div>
+
+                            <div class="tj">
+                                <h6>推荐商家</h6>
+                                <ul class="clearfix">
+                                    <li><a href="" target="_blank" title="慈溪市友兴大药房">慈溪市友兴大药房</a></li>
+                                    <li><a href="" target="_blank" title="红安县国药馆药房">红安县国药馆药房</a></li>
+                                    <li><a href="" target="_blank" title="北京京海康佰馨医药有限责任公司长阳分店">北京京海康佰馨医药有限责任公司长阳分店</a>
+                                    </li>
+                                    <li><a href="" target="_blank" title="阜阳小松医药有限公司程集大药房">阜阳小松医药有限公司程集大药房</a></li>
+                                    <li><a href="" target="_blank" title="西安市碑林区君怡医药超市">西安市碑林区君怡医药超市</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcat clearfix">
+                        <ul class="sitems">
+                            <li>
+                                <a class="bit" href="" target="_blank" title="药妆">药妆<label><i></i></label></a>
+                                <a sortno="1" href="" title="祛痘">祛痘</a>
+                                <a sortno="2" href="" title="祛斑">祛斑</a>
+                                <a sortno="3" href="" title="疤痕修复">疤痕修复</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="时尚彩妆">时尚彩妆<label><i></i></label></a>
+                                <a sortno="1" href="" title="补水">补水</a>
+                                <a sortno="2" href="" title="BB霜">BB霜</a>
+                                <a sortno="3" href="" title="隔离霜">隔离霜</a>
+                                <a sortno="4" href="" title="精华液">精华液</a>
+                                <a sortno="5" href="" title="美白霜/乳液">美白霜/乳液</a>
+                                <a sortno="6" href="" title="洁面乳">洁面乳</a>
+                                <a sortno="6" href="" title="防晒霜">防晒霜</a>
+                            </li>
+                            <li>
+                                <a class="bit" href="" target="_blank" title="身体护理">身体护理<label><i></i></label></a>
+                                <a sortno="1" href="" title="润肤">润肤</a>
+                                <a sortno="2" href="" title="止痒">止痒</a>
+                                <a sortno="3" href="" title="生发防脱">生发防脱</a>
+                                <a sortno="4" href="" title="香体除臭">香体除臭</a>
+                                <a sortno="5" href="" title="脱毛">脱毛</a>
+                            </li>
+                            <li class="last">
+                                <a class="bit2" href="" target="_blank">查看更多<label><i></i></label></a>&nbsp;
+                            </li>
+                        </ul>
+                        <div class="rmpp" data-event="mouseenter" data-container="#mrhf1">
+                            <div class="pp clearfix">
+                                <a href="" target="_blank" title="云南白药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-1.png"
+                                        alt="云南白药"></a>
+                                <a class="last" href="" target="_blank" title="仁和"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-2.png"
+                                        alt="仁和"></a>
+                                <a href="" target="_blank" title="999 三九制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-3.png"
+                                        alt="999 三九制药"></a>
+                                <a class="last" href="" target="_blank" title="白云山制药"><img
+                                        src="//c1.yaofangwang.net/common/images/www_gg/index/nav-zxyp-logo-4.png"
+                                        alt="白云山制药"></a>
+                            </div>
+
+                            <div class="adout">
+                                <a href="" target="_blank" title="艾丽 奥利司他胶囊"><img
+                                        src="//c1.yaofangwang.net/common/upload/imggg/20170523/e5f7d36d-341c-45fc-be68-092d6a2a44d55503.png"
+                                        alt="艾丽 奥利司他胶囊"></a>
+                            </div>
+
+                            <div class="tj">
+                                <h6>推荐商家</h6>
+                                <ul class="clearfix">
+                                    <li><a href="" target="_blank" title="北京普生集肿瘤药品有限公司">北京普生集肿瘤药品有限公司</a></li>
+                                    <li><a href="" target="_blank" title="沂南县福泰祥大药房">沂南县福泰祥大药房</a></li>
+                                    <li><a href="" target="_blank" title="中江县凯江镇大中太极大药房北门店">中江县凯江镇大中太极大药房北门店</a></li>
+                                    <li><a href="" target="_blank" title="宽城区仙芝堂大药房">宽城区仙芝堂大药房</a></li>
+                                    <li><a href="" target="_blank" title="肇州县九康医药有限公司">肇州县九康医药有限公司</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <div class="content">
+                <a href="//www.yaofangwang.com">药房网商城&gt;</a><a href="/catalog-2.html">医疗器械&gt;</a><a
+                    href="/catalog-43.html">外用贴膏&gt;</a><a href="/catalog-434.html">跌打损伤&gt;</a>
+                <a href="/medicine-221411.html" target="_blank">天和 骨通贴膏价格&gt;</a>
+                <a href="/yaodian/351520/" title="河北大仁大药房有限公司" rel="nofollow">河北大仁大药房有限公司&gt;</a>
+                <strong>天和 骨通贴膏</strong>
+            </div>
+        </div>
+        <div class="mink clearfix">
+            <div class="content clearfix">
+                <div class="mink-left">
+                    <div class="ta">
+                        <img src="//c1.yaofangwang.net/18/1821/ae86331d360359f6ea8a9e3e73dfee29.jpg_syp.jpg" alt="">
+                        <p>温馨提醒：商品包装因厂家更换频繁，如有不符请以实物为准。</p>
+                    </div>
+                    <div class="xia">
+                        <ul>
+                            <li style="margin-left:0;"><img
+                                    src="//c1.yaofangwang.net/18/2463/a8aa22df5cba48b0b55a24d696fcbacb.jpg_120x120.jpg"
+                                    alt=""></li>
+                            <li><img src="//c1.yaofangwang.net/18/1821/ae86331d360359f6ea8a9e3e73dfee29.jpg_120x120.jpg"
+                                    alt=""></li>
+                            <li><img src="//c1.yaofangwang.net/18/2463/a8aa22df5cba48b0b55a24d696fcbacb.jpg_120x120.jpg"
+                                    alt=""></li>
+                            <li><img src="//c1.yaofangwang.net/18/2631/816e224a48069b1c969851358840088d.jpg_120x120.jpg"
+                                    alt=""></li>
+                            <li><img src="//c1.yaofangwang.net/18/1911/2f3852d64b3ebbb20096ef667d3fadd9.jpg_120x120.jpg"
+                                    alt=""></li>
+                            <li><img src="//c1.yaofangwang.net/18/3905/6350bd7f6bc709c08e30fcde777173a5.jpg_120x120.jpg"
+                                    alt=""></li>
+                        </ul>
+                        <a class="icons arrow l prev"></a>
+                        <a class="icons arrow r next"></a>
+                    </div>
+                </div>
+                <div class="mink-center">
+                    <div class="center1">
+                        <h2>万通万通筋骨贴</h2>
+                        <div class="lot">
+                            <span class="span1">新客APP下单领20元券</span>
+                            <span class="span2">立即去领</span>
+                            <a><img src="https://c1.yaofangwang.net/4/2366/306cdcb42072dd1993b24f55d040e151.jpg"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                        <div class="rt">
+                            <span class="span1">通 用 名</span>
+                            <span class="span2">万通筋骨贴</span>
+                            <span class="span3">万通</span>
+                            <span class="span4">商品商标</span>
+
+                        </div>
+                    
+                    <div class="center2">
+                        <span class="span1">包装规格</span>
+                        <span class="span2">7cmx10cmx10贴/盒</span>
+                        <span class="span3">号贴剂</span>
+                        <span class="span4">剂型/型盒</span>
+                    </div>
+                    <div class="center3">
+                        <span class="span1">生产企业</span>
+                        <span class="span2">通化万通药业股份有限公司</span>
+                        <span class="span3">吉通械备20150009号</span>
+                        <span class="span4">注册证号</span>
+
+
+
+                    </div>
+                    <div class="center4">
+                        <span class="span1">优惠卷</span>
+                        <span class="span2">卷满一千减20</span>
+                        <span class="span3">手机扫一扫</span>
+                        <div class="gh">
+                            <span class="span4">零售价格</span>
+                            <strong>￥22.0</strong>
+                        </div>
+
+                    </div>
+                    <!-- <div class="center5">
+                        <span class="span1">选择套餐
+                        </span>
+                        <span class="span2">1盒装有效期：2020.11.30</span>
+                        <span class="span3">5盒装|13元每盒</span>
+                    </div> -->
+                    <div class="center6">
+                       <span class="span1">运  费</span>
+                       <span class="span2">至广州市</span>
+                       <span class="span3">快递：7.00</span>
+                    </div>
+                    <div class="center7">
+                        <span class="span1">需求数量</span>
+                        <a href="" class="a1">
+                            -
+                        </a>
+                        <input type="text" class="num" value="1" id="quantity">
+                        <a href="" class="a2">
+                            +
+                        </a>
+                        <span class="span2">库存： 385盒 ,限购40盒</span>
+                        <span class="span3"> 有效期至：2020.11.30</span>
+                    </div>
+                    <div class="center8">
+                        <span class="span1">提交需求</span>
+                        <span class="span2">加入需求单</span>
+                    </div>
+                </div>
+                <div class="mink-right">
+                    <a href="">
+                        <img src="//c1.yaofangwang.net/common/upload/shopimage/338/338584/448436f8-0594-42bf-8599-f448ece0426d8782.jpg" alt="">
+                           
+                    </a>
+                        <h3>靖宇县复康药店</h3>
+                        <ul class="lik">
+                            <li>
+                                <p class="pq1">服务</p>
+                                <p class="pq2">4.9</p>
+                            </li>
+                            <li>
+                                <p class="pq1">发货</p>
+                                <p class="pq2">4.9</p>
+                            </li>
+                            <li>
+                                <p class="pq1">物流</p>
+                                <p class="pq2">4.9</p>
+                            </li>
+                            <li style="border:none;">
+                                <p class="pq1">包装</p>
+                                <p class="pq2">4.9</p>
+                            </li>
+                        </ul>
+                            <p class="qt1">店铺评分:4.9</p>
+                            <p class="qt1">退  单  率：0.2%</p>
+                            <p class="qt1">发货时长：0.9小时</p>
+                            <p class="qt1">营业时间：8:00-21:00</p>
+                            <p class="qt1">店铺地址：吉林省白山市靖宇县靖宇镇将军路14号</p>
+                
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,6 +1,11 @@
 $(function () {
 
-
+    $(".daohang").hover(function () {
+        $(".other").css('display', 'block');
+        $(".other").css('border-top', 'none');
+    }, function () {
+        $(".other").css('display', 'none');
+    });
     $(".category").hover(function () {
         $(".catlist").css('display', 'block');
     }, function () {
@@ -20,35 +25,43 @@ $(function () {
             $(this).attr("title", "aa");
         }
     });
-        $.ajax({
-            type: "post",
-            url: "../api/list.php",
-            dataType: "json",
-            success: function (response) {
-                if (response.status == "error") {
-                    alert("网络繁忙，请检查网络连接");
-                } else {
-                    console.log("count", response.data.count);
-                    // 创建3个标签显示在页面中
-                    $(".pager").empty();
-                    for (var i = 0; i < response.data.count; i++) {
-                        $(".pager").append(`<a href="javascript:;">${i + 1}</a>`);
-                    }
-                    $(".pager").children("a:first").addClass("active");
+    $(".hnav li").hover(function () {
+        $(".hanv li").eq($(this).index()).addClass("co5").siblings().removeClass('co5');
+
+        $(".linktxt").hide().eq($(this).index()).show();
+    });
+   
+    $.ajax({
+        type: "post",
+        url: "../api/list.php",
+        dataType: "json",
+        success: function(response) {
+            if (response.status == "error") {
+                alert("网络繁忙，请检查网络连接");
+            } else {
+                console.log("count", response.data.count);
+                // 创建3个标签显示在页面中
+                $(".pager").empty();
+                for (var i = 0; i < response.data.count; i++) {
+                    $(".pager").append(`<a href="javascript:;">${i + 1}</a>`);
                 }
+                $(".pager").children("a:first").addClass("active");
             }
-        });
-            let getList = (pager, type) => {
+        }
+    });
+            let getList = (pager ,type) => {
                 $.ajax({
                     type: "post",
                     url: "../api/list2.php",
-                    data: 'pager=' + pager + '&type=' +type,
-                    dataType: "json",
+                    data:'pager=' + pager + '&type=' + type,
+                    dataType:'json',
                     success:function(response) {
+                        console.log(response);
                         var res = response.map(ele => {
-                            return `<li>
-                                    <a ="href"><img src=${ele.urlimg}></a>
-                                 <h2>￥${ele.price}</h2>
+                            return `<li id = ${ele.gid}>
+                                    <a href ="http://127.0.0.1/yaofangwang/code/html/details.html?id=${ele.gid}"><img src=${ele.urlimg} class="god"></a>
+                                    <h2 class="priceA">￥${ele.price}</h2>
+                                    <span class ="priceB">￥${ele.price1}</span>
                                     <h3>${ele.title}</h3>
                                     <p class="p1 po">规格：${ele.regular}</p>
                                     <p class="p2 po">剂型：${ele.type}</p>
@@ -65,7 +78,6 @@ $(function () {
             var type = 'default';
             getList(0,type);
             $('.pager').on('click','a',function(){
-                alert(1);
                 getList($(this).index(),type);
                 $('.pager').children('a').eq($(this).index()).addClass('active').siblings().removeClass("active");
             })
@@ -74,4 +86,6 @@ $(function () {
                 getList(0,type);
                 $('.pager').children('a').eq(0).addClass('active').siblings().removeClass("active");
             })
+           
+           
     });

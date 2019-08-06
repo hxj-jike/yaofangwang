@@ -2,7 +2,9 @@
 header("Content-Type:text/html;charset=UTF-8");
 include './conn.php';
 
+# 查询获取表中的所有内容
 $sql = "SELECT * FROM list1";
+
 $result = mysqli_query($conn,$sql);
 if(!$result)
 {
