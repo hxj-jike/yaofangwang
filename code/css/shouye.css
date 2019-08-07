@@ -2023,8 +2023,8 @@ a.green {
 .footer .copyright p.font {
     margin-top: 5px;
 }
-.slidenav {
-    position: fixed;
+.slidenav{
+    position:fixed;
     right: 2px;
     top: 233px;
     background: #fff;

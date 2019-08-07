@@ -188,7 +188,7 @@ $(function () {
         var email = $("#txtEmail").val();
         var realname = $("#txt_RealName").val();
         var telphone1 = $("#txtphone1").val();
-        var telphone2 = $("#txtphone2").val();
+        var telphone2 = $("#txtphone2").val(); 
         if (isok1 == true && isok2 == true && isok3 == true && isok4 == true && isok5 == true && isok6 == true && isok7 == true && isok8 == true){
             $.ajax({
                 type: 'post',
