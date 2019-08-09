@@ -3870,7 +3870,7 @@
                 </div>
             </div>
         </div>
-        <ul class="elevator" style="top: 65px; left: 19.5px; display: block;">
+        <ul class="elevator" style="top:65px; left: 19.5px;">
             <li><a href="#zxyp" class=""><i class="l1"></i><span>中西药品</span></a></li>
             <li><a href="#ysbj" class=""><i class="l2"></i><span>养生保健</span></a></li>
             <li><a href="#ylqx" class=""><i class="l3"></i><span>医疗器械</span></a></li>
@@ -4082,7 +4082,6 @@
         <div class="i i4"><a class="t" href="//www.yaofangwang.com/suggest.html" target="_blank">意见反馈</a></div>
         <div class="i i5 last" id="totop" style="display: block;"><a class="t" href="javascript:void(0);">返回顶层</a></div>
     </div>
-
     <script>
         var AutoScroll = function (a) {
             $(a).find(".p:first").animate({
@@ -4105,7 +4104,7 @@
                 var arrT = JSON.parse(res);
 
                 var ress = arrT.map(ele => {
-                    return ` <div class="content">
+                    return `<div class="content">
                 <ul>
                     <li><a href=""><img
                                 src="${ele.src}"
@@ -4119,6 +4118,13 @@
                 $(".lot").html(ress);
             }
         })
+        $('.t').click(function(){
+                        // html，body取并级，处理浏览器兼容
+                       $("html,body").animate({
+                   scrollTop:0,
+                        screenLeft: 0,
+                      }, 400);  
+                   });
     </script>
 
 </body>

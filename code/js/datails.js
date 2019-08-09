@@ -5,23 +5,12 @@ $(function () {
     }, function () {
         $(".other").css('display', 'none');
     });
-
-    // $(".category").hover(function () {
-    //     $('.catlist').eq($(this).index()).addClass("co1").siblings().removeClass('co1');
-    //     $(".catlist").hide().eq($(this).index()).show();
-    // });
-
-    // $(".gh").hover(function () {
-    //     $(".gh").eq($(this).index()).addClass("co").siblings().removeClass('co');
-    //     $(".subcat").hide().eq($(this).index()).show();
-    //     $('.subcat').mouseout(function () {
-    //         $(".subcat").show().eq($(this).index()).hide();
-    //     })
-    // });
-    
-  
-       
-
-
+    $('.t').click(function(){
+        // html，body取并级，处理浏览器兼容
+       $("html,body").animate({
+   scrollTop:0,
+        screenLeft: 0,
+      }, 400);  
+   });
     
 })

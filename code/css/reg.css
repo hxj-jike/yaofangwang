@@ -632,15 +632,13 @@ input {
     top: 12px;
 }
 
-.ck .checked {
+.ck .protocol {
     display:block;
     width: 16px;
     height: 16px;
-    background-position: -60px -25px;;
     position: absolute;
     left: -3px;
     top:12px;
-    background-image: url(../img/icons.png);
 }
 
 #xieyi{

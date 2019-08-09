@@ -1584,9 +1584,6 @@ a.green {
  .lot{
      overflow: hidden;
  }
- .lot ul{
-     overflow: hidden;
- }
 .lot li {
     width: 228px;
     float: left;
@@ -1828,9 +1825,8 @@ a.green {
 
 .elevator{
     position: fixed;
-    left: 0;
-    top: 233px;
     background: #fff;
+    left:19px;
     width: 40px;
     z-index: 9997;
     border: 1px solid #e5e5e5;
@@ -1843,11 +1839,16 @@ a.green {
     width: 40px;
     list-style: none;
 }
+.elevator li:hover{
+    background:#0cb95f;
+    opacity: 0.8;
+}
 .elevator li a {
     display: block;
     height: 78px;
     width: 40px;
     position: relative;
+    color:#fff;
 }
 .elevator li a i.l1 {
     background-position: -172px -371px;
@@ -2031,6 +2032,8 @@ a.green {
     width: 52px;
     z-index: 9997;
     display: none;
+    font-size: 13px;
+    
 }
 .slidenav .i.i1 {
     background-position: -91px -308px;
@@ -2041,7 +2044,7 @@ a.green {
     display: block;
     height: 30px;
     width: 30px;
-    background-image: url(/common/images/icons.png);
+    background-image: url(../img/icons.png);
     border: 1px solid #e5e5e5;
     border-bottom: 0;
     padding: 10px;
@@ -2064,6 +2067,18 @@ a.green {
     font-size: 0;
     padding-right: 10px;
 }
+.slidenav .i:hover{
+    background:#0cb95f;
+}
+.slidenav .i:hover a{
+    display:block;
+    color:#fff;
+}
+.slidenav .i:hover span{
+    display:block;
+    color:#fff;
+}
+
 .slidenav .i .contact .qqcon {
     background: #0cb95f;
     padding: 8px;
@@ -2186,4 +2201,5 @@ a.green {
 .slidenav .i.i5 {
     background-position: -284px -307px;
     display: none;
+    border-bottom:1px solid #ccc;
 }

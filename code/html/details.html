@@ -870,155 +870,219 @@
                 </div>
             </div> -->
         </div>
-
+        <div class="slidenav" style="top: 65px; display: block;">
+            <div class="i i1" style="display: block;">
+                <span class="t">联系客服</span>
+                <div class="contact">
+                    <div class="qqcon">
+                        <p>在线客服：<img id="closeQQ" alt="咨询客服" src="//c1.yaofangwang.net/common/images/qq-close.png"></p>
+                        <div class="js">
+                            <a href="javascript:void(0);" class="zhiCustomBtn">
+                                <img src="//c1.yaofangwang.net/common/images/yfwcc.png">
+                            </a>
+                        </div>
+                        <img alt="咨询电话" src="//c1.yaofangwang.net/common/images/qq-tel.png">
+                    </div>
+                </div>
+            </div>
+            <div class="i i6"><a class="t" href="http://127.0.0.1/yaofangwang/code/html/cart.html"><i id="cartnum2" style="display:block">0</i></a></div>
+            <div class="i i2"><a class="t" href="javascript:void(0);">同店购买</a><i id="tdgnum" style="display: none;"></i></div>
+            <div class="i i3">
+                <span class="t">关注我们</span>
+                <div class="gzwm" style="display: none;">
+                    <div class="wxsbg"></div>
+                    <div>微信扫一扫<br>查药更方便</div>
+                    <div class="wbsbg"></div>
+                    <a class="gzwb" target="_blank" href="http://weibo.com/yibangyaofangwang">关注微博</a>
+                </div>
+            </div>
+            <div class="i i7">
+                <span class="t">手机APP</span>
+                <div class="app" style="display: none;">
+                    <div class="appbg"></div>
+                    <div>手机查药比价</div>
+                    <a class="gzwb" target="_blank" href="//www.yaofangwang.com/app/index.html">扫码下载</a>
+                </div>
+            </div>
+            <div class="i i4"><a class="t" href="//www.yaofangwang.com/suggest.html" target="_blank">意见反馈</a></div>
+            <div class="i i5 last" id="totop" style="display: block;"><a class="t" href="javascript:void(0);">返回顶层</a></div>
+        </div>
     </div>
-    <script>
-        let gid = decodeURI(location.search).slice(1);
-        $.ajax({
-            type: 'post',
-            url: '../api/datails.php',
-            data: gid,
-            success: str => {
-                let data = JSON.parse(str);
-                let res = data.map(ele => {
-                    return `<div class="content clearfix">
-            <div class="mink-left">
-                    <div id="MagnifierWrap2">
-		<div class="MagnifierMain">
-			<img class="MagTargetImg" src="${ele.urlimg}" data-src="${ele.urlimg}">
-		</div>
-		<span class="spe_leftBtn">&lt;</span>
-		<span class="spe_rightBtn">&gt;</span>
-		<div class="spec-items">
-                <ul>
-                    <li style="margin-left:0;"><img
-                            src="${ele.tu1}"data-lsrc="${ele.tu1}"data-maxSrc="${ele.tu1}"
-                            alt=""></li>
-                    <li><img src="${ele.tu2}"data-lsrc="${ele.tu2}"data-maxSrc="${ele.tu2}"
-                            alt=""></li>
-                    <li><img src="${ele.tu3}"data-lsrc="${ele.tu3}"data-maxSrc="${ele.tu3}"
-                            alt=""></li>
-                    <li><img src="${ele.tu4}"data-lsrc="${ele.tu4}"data-maxSrc="${ele.tu4}"
-                            alt=""></li>
-                    <li><img src="${ele.tu5}"data-lsrc="${ele.tu5}"data-maxSrc="${ele.tu5}"
-                            alt=""></li>
-                    <li><img src="${ele.tu6}"data-lsrc="${ele.tu6}"data-maxSrc="${ele.tu6}"
-                            alt=""></li>
-                </ul>
-		</div>
+   <script>
+     $(function(){
+     
+let gid = decodeURI(location.search).slice(1);
+var index;
+var pe;
+let  oBox = $('.mink');
+$.ajax({
+    type: 'post',
+    url: '../api/datails.php',
+    data:gid,
+    dataType: "json",
+    success:function(data){
+         data.forEach(function(ele,i){
+              index = ele.gid;
+              pe    = ele.price
+        let res = `<div class="ele" data-index=${i}></div>
+        <div class="content clearfix">
+    <div class="mink-left">
+            <div id="MagnifierWrap2">
+<div class="MagnifierMain">
+    <img class="MagTargetImg" src="${ele.urlimg}" data-src="${ele.urlimg}">
+</div>
+<span class="spe_leftBtn">&lt;</span>
+<span class="spe_rightBtn">&gt;</span>
+<div class="spec-items">
+        <ul>
+            <li style="margin-left:0;"><img
+                    src="${ele.tu1}"data-lsrc="${ele.tu1}"data-maxSrc="${ele.tu1}"
+                    alt=""></li>
+            <li><img src="${ele.tu2}"data-lsrc="${ele.tu2}"data-maxSrc="${ele.tu2}"
+                    alt=""></li>
+            <li><img src="${ele.tu3}"data-lsrc="${ele.tu3}"data-maxSrc="${ele.tu3}"
+                    alt=""></li>
+            <li><img src="${ele.tu4}"data-lsrc="${ele.tu4}"data-maxSrc="${ele.tu4}"
+                    alt=""></li>
+            <li><img src="${ele.tu5}"data-lsrc="${ele.tu5}"data-maxSrc="${ele.tu5}"
+                    alt=""></li>
+            <li><img src="${ele.tu6}"data-lsrc="${ele.tu6}"data-maxSrc="${ele.tu6}"
+                    alt=""></li>
+        </ul>
+</div>
+</div>
     </div>
+    <div class="mink-center">
+        <div class="center1">
+            <h2>${ele.title}</h2>
+            <div class="lot">
+                <span class="span1">新客APP下单领20元券</span>
+                <span class="span2">立即去领</span>
+                <a><img src="https://c1.yaofangwang.net/4/2366/306cdcb42072dd1993b24f55d040e151.jpg"
+                        alt=""></a>
             </div>
-            <div class="mink-center">
-                <div class="center1">
-                    <h2>${ele.title}</h2>
-                    <div class="lot">
-                        <span class="span1">新客APP下单领20元券</span>
-                        <span class="span2">立即去领</span>
-                        <a><img src="https://c1.yaofangwang.net/4/2366/306cdcb42072dd1993b24f55d040e151.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                    <div class="rt">
-                        <span class="span1">通用名</span>
-                        <span class="span2">${ele.title}</span>
-                        <span class="span3">万通</span>
-                        <span class="span4">商品商标</span>
+        </div>
+            <div class="rt">
+                <span class="span1">通用名</span>
+                <span class="span2">${ele.title}</span>
+                <span class="span3">万通</span>
+                <span class="span4">商品商标</span>
 
-                    </div>
-                
-                <div class="center2">
-                    <span class="span1">包装规格</span>
-                    <span class="span2">${ele.regular}</span>
-                    <span class="span3">${ele.type}</span>
-                    <span class="span4">剂型/型盒</span>
-                </div>
-                <div class="center3">
-                    <span class="span1">生产企业</span>
-                    <span class="span2">通化万通药业股份有限公司</span>
-                    <span class="span3">${ele.ban}</span>
-                    <span class="span4">注册证号</span>
-
-
-
-                </div>
-                <div class="center4">
-                    <span class="span1">优惠卷</span>
-                    <span class="span2">卷满一千减20</span>
-                    <span class="span3">手机扫一扫</span>
-                    <div class="gh">
-                        <span class="span4">零售价格</span>
-                        <strong>￥${ele.price}</strong>
-                    </div>
-
-                </div>
-                <!-- <div class="center5">
-                    <span class="span1">选择套餐
-                    </span>
-                    <span class="span2">1盒装有效期：2020.11.30</span>
-                    <span class="span3">5盒装|13元每盒</span>
-                </div> -->
-                <div class="center6">
-                   <span class="span1">运  费</span>
-                   <span class="span2">至广州市</span>
-                   <span class="span3">快递：7.00</span>
-                </div>
-                <div class="center7">
-                    <span class="span1">需求数量</span>
-                    <a href="" class="a1">
-                        -
-                    </a>
-                    <input type="text" class="num" value="1" id="quantity">
-                    <a href="" class="a2">
-                        +
-                    </a>
-                    <span class="span2">库存： 385盒 ,限购40盒</span>
-                    <span class="span3"> 有效期至：2020.11.30</span>
-                </div>
-                <div class="center8">
-                    <span class="span1">提交需求</span>
-                    <span class="span2">加入需求单</span>
-                </div>
             </div>
-            <div class="mink-right">
-                <a href="">
-                    <img src="//c1.yaofangwang.net/common/upload/shopimage/338/338584/448436f8-0594-42bf-8599-f448ece0426d8782.jpg" alt="">
-                       
-                </a>
-                    <h3>靖宇县复康药店</h3>
-                    <ul class="lik">
-                        <li>
-                            <p class="pq1">服务</p>
-                            <p class="pq2">4.9</p>
-                        </li>
-                        <li>
-                            <p class="pq1">发货</p>
-                            <p class="pq2">4.9</p>
-                        </li>
-                        <li>
-                            <p class="pq1">物流</p>
-                            <p class="pq2">4.9</p>
-                        </li>
-                        <li style="border:none;">
-                            <p class="pq1">包装</p>
-                            <p class="pq2">4.9</p>
-                        </li>
-                    </ul>
-                        <p class="qt1">店铺评分:4.9</p>
-                        <p class="qt1">退  单  率：0.2%</p>
-                        <p class="qt1">发货时长：0.9小时</p>
-                        <p class="qt1">营业时间：8:00-21:00</p>
-                        <p class="qt1">店铺地址：吉林省白山市靖宇县靖宇镇将军路14号</p>
-            
+        
+        <div class="center2">
+            <span class="span1">包装规格</span>
+            <span class="span2">${ele.regular}</span>
+            <span class="span3">${ele.type}</span>
+            <span class="span4">剂型/型盒</span>
+        </div>
+        <div class="center3">
+            <span class="span1">生产企业</span>
+            <span class="span2">通化万通药业股份有限公司</span>
+            <span class="span3">${ele.ban}</span>
+            <span class="span4">注册证号</span>
+
+
+
+        </div>
+        <div class="center4">
+            <span class="span1">优惠卷</span>
+            <span class="span2">卷满一千减20</span>
+            <span class="span3">手机扫一扫</span>
+            <div class="gh">
+                <span class="span4">零售价格</span>
+                <strong>￥${ele.price}</strong>
             </div>
-        </div>`
-                }).join("");
-                $(".mink").html(res);
 
-                MagnifierF("MagnifierWrap2");
-            }
-        });
-    </script>
-
+        </div>
+        <!-- <div class="center5">
+            <span class="span1">选择套餐
+            </span>
+            <span class="span2">1盒装有效期：2020.11.30</span>
+            <span class="span3">5盒装|13元每盒</span>
+        </div> -->
+        <div class="center6">
+           <span class="span1">运  费</span>
+           <span class="span2">至广州市</span>
+           <span class="span3">快递：7.00</span>
+        </div>
+        <div class="center7">
+            <span class="span1">需求数量</span>
+            <a href="javascript:;" class="a1">
+                -
+            </a>
+            <input type="text" class="num" value="1" id="quantity">
+            <a href="javascript:;" class="a2">
+                +
+            </a>
+            <span class="span2">库存： 385盒 ,限购40盒</span>
+            <span class="span3"> 有效期至：2020.11.30</span>
+        </div>
+        <div class="center8">
+            <span class="span1">提交需求</span>
+            <span class="spanq">加入需求单</span>
+        </div>
+    </div>
+    <div class="mink-right">
+        <a href="">
+            <img src="//c1.yaofangwang.net/common/upload/shopimage/338/338584/448436f8-0594-42bf-8599-f448ece0426d8782.jpg" alt="">
+               
+        </a>
+            <h3>靖宇县复康药店</h3>
+            <ul class="lik">
+                <li>
+                    <p class="pq1">服务</p>
+                    <p class="pq2">4.9</p>
+                </li>
+                <li>
+                    <p class="pq1">发货</p>
+                    <p class="pq2">4.9</p>
+                </li>
+                <li>
+                    <p class="pq1">物流</p>
+                    <p class="pq2">4.9</p>
+                </li>
+                <li style="border:none;">
+                    <p class="pq1">包装</p>
+                    <p class="pq2">4.9</p>
+                </li>
+            </ul>
+                <p class="qt1">店铺评分:4.9</p>
+                <p class="qt1">退  单  率：0.2%</p>
+                <p class="qt1">发货时长：0.9小时</p>
+                <p class="qt1">营业时间：8:00-21:00</p>
+                <p class="qt1">店铺地址：吉林省白山市靖宇县靖宇镇将军路14号</p>
+    
+    </div>
+</div>`
+    oBox.append(res);  
+        })
+     
+        MagnifierF("MagnifierWrap2");
+    }
+});
+$(".mink").on("click",".spanq",function(){
+    var gid = index;
+    var price = pe;
+    console.log(pe)
+    console.log(gid);
+    $.ajax({
+        type:'post',
+        url:'../api/add.php',
+        data:'gid=' + gid + "&price=" + price,
+        dataType:'json',
+        success:function(res){
+            var text = res["totalRow"];
+            $("#cartnum2").html(text)
+        }
+        
+    })
+})
+    
+})
+   
+   
+   </script>
 </body>
 
 </html>

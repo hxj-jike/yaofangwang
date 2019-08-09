@@ -152,5 +152,6 @@ $(function(){
 
         $(".linktxt").hide().eq($(this).index()).show();
     });
+                    
 
 })
