@@ -1,9 +1,12 @@
 $(function(){
-        $(".gh").hover(function () {
-            $(".gh").eq($(this).index()).addClass("co").siblings().removeClass('co');
-            $(".subcat").hide().eq($(this).index()).show();
-        });
-
+    
+    $(".gh").mouseover(function () {
+        $(".gh").eq($(this).index()).addClass("co").siblings().removeClass('co');
+        $(".subcat").hide().eq($(this).index()).show();
+    })
+    $(".gh").mouseout(function(){
+        $(".subcat").eq($(this).index()).hide();
+    })
     $(".daohang").hover(function () {
         $(".other").css('display', 'block');
         $(".other").css('border-top', 'none');
@@ -152,6 +155,15 @@ $(function(){
 
         $(".linktxt").hide().eq($(this).index()).show();
     });
+    
+    window.onscroll = function(){
+   var scrollTop = window.scrollY
+         if(scrollTop>800){
+             $('.elevator').css('display','block')
+    }else{
+        $('.elevator').css('display','none');
+    }
+}
                     
 
 })

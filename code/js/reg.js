@@ -199,9 +199,7 @@ $(function () {
                         window.location.href='http://127.0.0.1/yaofangwang/code/html/login.html';   
                     }
                 }
-            })
-         
-          
+            })     
         } else {
             alert("请验证输入信息是否正确");
         }

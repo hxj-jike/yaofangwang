@@ -72,7 +72,7 @@
              }
          });
      }
-     function computedTotalPrice() {
+     function computedTotalPrice(){
         var res = 0;
         targetData.forEach(element => {
             if (element.isActive == 1) {
@@ -113,10 +113,9 @@
     // 加数量
     $(".ct").on("click",".add",function () {
         var gid = gd;
-         num = $(this).prev().val();
+       var  num = $(this).prev().val();
+       num++;
         var kucun = $(this).prev().data('num');
-        num++;
-     
         if (num>=kucun) {
             num = kucun;
         }
@@ -127,7 +126,7 @@
             url: "../api/adt.php",
             data:"gid=" +gid +'&num=' + num,
             success: function(response) {
-                computedTotalPrice();
+               
             }
             
         });
@@ -146,7 +145,4 @@
 
  
 })
-total();
-function total(now){
-}
  })

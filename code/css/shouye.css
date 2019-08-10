@@ -910,11 +910,12 @@ a.green {
     margin-bottom: 20px;
     overflow: hidden;
     z-index: 200;
+    margin:auto;
 }
 
 .banner ul {
     height: 100%;
-    margin: 0 auto;
+    margin:auto;
     min-width: 1190px;
     overflow: hidden;
     position: relative;
@@ -928,8 +929,7 @@ a.green {
 }
 
 .banner ul li img {
-    position: absolute;
-    width: 780px;
+    width:1349px;
     height: 390px;
 }
 
@@ -956,9 +956,9 @@ a.green {
 .banner ul li>a {
     display: block;
     height: 100%;
-    margin-left: 310px;
+    /* margin-left: 310px; */
     text-align: left;
-    width: 780px;
+    width:1349px;
     position: relative;
 }
 
@@ -1830,6 +1830,7 @@ a.green {
     width: 40px;
     z-index: 9997;
     border: 1px solid #e5e5e5;
+    display:none;
 }
 .elevator li {
     display: block;
