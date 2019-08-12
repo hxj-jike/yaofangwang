@@ -110,13 +110,11 @@ $(function () {
         $.ajax({
             type: "post",
             url: "../api/list2.php",
-            data: `pager=${pager}&orderType=${orderType}`,
+            data: 'pager=' +pager + '&orderType=' + orderType,
             dataType: "json",
             success: function (response) {
-                console.log(response);
-                // [2] 根据数据渲染页面
                 var res = response.data.map(ele => {
-                 return   `<li id = ${ele.gid}>
+                 return  `<li id = ${ele.gid}>
                      <a href ="http://127.0.0.1/yaofangwang/code/html/details.html?id=${ele.gid}"><img src=${ele.urlimg} class="god"></a>
                     <h2 class="priceA">￥${ele.price}</h2>
                    <span class ="priceB">￥${ele.price1}</span>

@@ -66,11 +66,12 @@
                  }).join("");
 
                  $(".ct").html(res);
-                 computedTotalPrice();
+                 computedTotalPrice(); 
+                
+
              }
          });
-     }
-
+     }   
      function computedTotalPrice() {
          var res = 0;
          targetData.forEach(element => {
@@ -78,7 +79,7 @@
                  res += element.num * 1;
              }
          });
-         $(".table03 .w2").html("总计：" + res);
+         $(".table03 .mn").html("总计:" + res);
 
      }
     //  $(".ct").on("click", ".checkbox-class", function () {

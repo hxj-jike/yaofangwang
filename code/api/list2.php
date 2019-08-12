@@ -11,14 +11,13 @@
 
 //   $sql = "SELECT * FROM list1 ORDER BY 'price' DESC limit $pager,40";
 
-// } else if ($type == "priceB") {
+// }else if($type == "priceB") {
 
 
 //   $sql = "SELECT * FROM list1 ORDER BY 'price' ASC limit $pager,40";
 // }
 // $result = mysqli_query($conn,$sql);
 // echo json_encode(mysqli_fetch_all($result, MYSQLI_ASSOC), true);
-
 include './conn.php';
 $pager = $_REQUEST["pager"] * 40;
 $typeOrder = $_REQUEST["orderType"];
@@ -33,8 +32,6 @@ if($typeOrder == 0)
 {
   $sql = "SELECT * FROM `list1` ORDER BY `list1`.`price` ASC limit $pager , 40";
 }
-
-
 
 $result = mysqli_query($conn,$sql);
 
