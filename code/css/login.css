@@ -394,6 +394,9 @@ input, button, select {
     font-family: "\5FAE\8F6F\96C5\9ED1";
     line-height: 40px;
 }
+.login input{
+    padding-left:10px;
+}
 .login .form .bginput i.user {
     background-position: -351px -109px;
 }

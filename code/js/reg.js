@@ -194,13 +194,17 @@ $(function () {
                 data: 'username=' + username + '&password=' + password + '&phone=' +
                     phone + '&realname=' + realname + '&email=' + email + '&telphone1=' + telphone1 + '&telphone2=' + telphone2,
                 success:function(res){
-                    if (res == "yes"){
+                    if(res = 'yes'){
                         alert('注册成功');
-                        window.location.href='http://127.0.0.1/yaofangwang/code/html/login.html';   
+                        window.location.href =
+                        'http://127.0.0.1/yaofangwang/code/html/login.html';
                     }
+                    
                 }
-            })     
-        } else {
+                
+            })  
+            
+        }else{
             alert("请验证输入信息是否正确");
         }
     })

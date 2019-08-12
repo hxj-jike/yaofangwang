@@ -1,9 +1,10 @@
  $(function () {
      var targetData;
-     var gd;
+     //  var gd;
      getCatInfo();
+
      function getCatInfo() {
-     
+
          $.ajax({
              type: "post",
              url: "../api/cart.php",
@@ -12,16 +13,16 @@
                  targetData = data;
                  /* 根据数据来渲染页面 */
                  var res = data.map(function (ele) {
-                      gd = ele.gid;
-                     var html = ` <table class="table02 js-cart-item" data-shopid="381683">
+                     //   gd = ele.gid;
+                     var html = ` <table class="table02 js-cart-item" data-shopid="${ele.gid}">
                     <tbody>
                                 <tr data-id="c_23899754" data-storeid="381683 ${ele.gid}">
                                     <td class="w1">
-                                            <div class="ck js-ck js-ck-medicine"><i class="checkbox-class ${ele.isActive==1 ? "checked" : "" }"data-cartid="23899754"></i></div>
+                                            <div class="ck js-ck js-ck-medicine"><i style="width:16px;height:16px" class="checkbox-class ${ele.isActive==1 ? "checked" : "" }"data-cartid="23899754"></i></div>
                                     </td>
                                     <td class="w2">
                                         <a target="_blank" href="">
-                                            <img src="${ele.tu1}" alt="万通 万通筋骨贴(贴剂)">
+                                            <img src="${ele.urlimg}" alt="万通 万通筋骨贴(贴剂)">
                                         </a>
                                     </td>
                                     <td class="w3">
@@ -51,7 +52,7 @@
 
                                     </td>
                                     <td class="w6">
-                                            <span class="money js-money">￥${ele.total}</span>
+                                            <span class="money js-money">￥${ele.price*ele.num}</span>
 
                                     </td>
                                     <td class="w7">
@@ -65,84 +66,111 @@
                  }).join("");
 
                  $(".ct").html(res);
-
-                 // console.log(targetData);
                  computedTotalPrice();
-
              }
          });
      }
-     function computedTotalPrice(){
-        var res = 0;
-        targetData.forEach(element => {
-            if (element.isActive == 1) {
-                res += element.total * 1;
-            }
-        });
-        $(".table03 .w2").html("总计：" + res);
 
-    }
-    // $(".ct").on("click", ".checkbox-class", function() {
-    //     var gid = gd;
-    //     var gid = $(this).parents("tr").data("index");
-    //     var isActive = $(this).is(":checked");
-    //     $.ajax({
-    //         type: "get",
-    //         url: "../api/update.php",
-    //         data: `gid=${gid}&isActive=${isActive}`,
-    //         dataType: "dataType",
-    //         success: function(response) {
-    //             /* 如果请求成功，那么就重新发请求加载数据 */
-    //             getCatInfo();
-    //         }
-    //     });
-    // })
+     function computedTotalPrice() {
+         var res = 0;
+         targetData.forEach(element => {
+             if (element.isActive == 1) {
+                 res += element.num * 1;
+             }
+         });
+         $(".table03 .w2").html("总计：" + res);
 
-    /* 给删除添加点击事件 */
-    $(".ct").on("click", ".js-delete", function() {
-        var gid = gd;
+     }
+    //  $(".ct").on("click", ".checkbox-class", function () {
+    //     var gid = $(this).parents('.table02').attr('data-shopid');
+    //      var isActive = $(this).is(":checked");
+    //      $.ajax({
+    //          type: "get",
+    //          url: "../api/update.php",
+    //          data: `gid=${gid}&isActive=${isActive}`,
+    //          dataType: "dataType",
+    //          success: function (response) {
+    //              /* 如果请求成功，那么就重新发请求加载数据 */
+    //              getCatInfo();
+    //          }
+    //      });
+    //  })
+
+     /* 给删除添加点击事件 */
+
+     $(".ct").on("click", ".js-delete", function () {
+        var gid = $(this).parents('.table02').attr('data-shopid');
+         $.ajax({
+             type: "post",
+             url: "../api/remove.php",
+             data: "gid=" + gid,
+             success: function (response) {
+                 getCatInfo();
+             }
+         });
+     })
+
+     function total(now) {
+         var price = now.parent().parent().prev().children().html();
+         var prices = price.substr(1) * 1
+         var num = now.parent().children('.js-num').val();
+         var total = prices * num;
+         now.parent().parent().next().children('.money').html('￥'+ total);
+
+     }
+     // 加数量
+     $(".ct").on("click", ".add", function () {
+         var gid = $(this).parents('.table02').attr('data-shopid');
+
+         var num = $(this).prev().val();
+         num++;
+         var kucun = $(this).prev().data('num');
+         if (num >= kucun) {
+             num = kucun;
+         }
+
+         $(this).prev().val(num)
+         total($(this));
+       
+         $.ajax({
+             type: "post",
+             url: "../api/adt.php",
+             data: "gid=" + gid + '&num=' + num
+         });
+         getCatInfo();
+
+     });
+
+     //减数量;
+     $(".ct").on("click", ".sub", function () {
+         num = $(this).next().val();
+
+         num--;
+         if (num <= 1) {
+             num = 1;
+         }
+         $(this).next().val(num);
+         total($(this));
+         var gid = $(this).parents('.table02').attr('data-shopid');
+         $.ajax({
+             type: "post",
+             url: "../api/jian.php",
+             data: "gid=" + gid + '&num=' + num
+         });
+         getCatInfo();
+     })
+
+     $('.ct').on('click',".checkbox-class",function(){
+        var gid = $(this).parents('.table02').attr('data-shopid');
+        // var isActive = $(this).is("checked");
         $.ajax({
-            type: "post",
-            url: "../api/remove.php",
-            data:"gid=" + gid,
-            success: function(response) {
-                getCatInfo();
-            }
-        });
-    })
-    // 加数量
-    $(".ct").on("click",".add",function () {
-        var gid = gd;
-       var  num = $(this).prev().val();
-       num++;
-        var kucun = $(this).prev().data('num');
-        if (num>=kucun) {
-            num = kucun;
-        }
-        
-        $(this).prev().val(num)
-        $.ajax({
-            type: "post",
-            url: "../api/adt.php",
-            data:"gid=" +gid +'&num=' + num,
-            success: function(response) {
-               
-            }
-            
-        });
-
-    });
-    //减数量;
-    var num;
-    $(".ct").on("click",".sub",function () {
-         num = $(this).next().val(); 
-         console.log(num);
-        num--;
-        if (num<=1){
-            num =1;
-        }
-        $(this).next().val(num);
-
- 
-})
+                     type: "post",
+                     url: "../api/update.php",
+                     data:{
+                         gid,
+                         isActive:'0'
+                     }
+                 });
+                 getCatInfo()
+     })
  })

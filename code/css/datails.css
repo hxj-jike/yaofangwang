@@ -1469,7 +1469,7 @@ span.spe_rightBtn {
     display: none;
 }
 .slidenav .i .gzwm .wxsbg {
-    background-image: url(/common/images/wxsmall.png);
+    background-image: url(../img/wxsmall.png);
     width: 80px;
     height: 80px;
     margin-bottom: 5px;
